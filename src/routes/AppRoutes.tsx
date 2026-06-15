@@ -6,9 +6,9 @@ import {
 import HomePage from "../pages/HomePage";
 
 import TermsPage from "../pages/TermsPage";
-// import PrivacyPage from "../pages/PrivacyPage";
-// import WarrantyPage from "../pages/WarrantyPage";
-// import StoreLocatorPage from "../pages/StoreLocatorPage";
+import PrivacyPage from "../pages/PrivacyPage";
+import WarrantyPage from "../pages/WarrantyPage";
+import StoreLocatorPage from "../pages/StoreLocatorPage";
 
 import LoginPage from "../pages/admin/LoginPage";
 
@@ -39,7 +39,7 @@ export default function AppRoutes() {
         element={<TermsPage />}
       />
 
-      {/* <Route
+      <Route
         path="/privacy"
         element={<PrivacyPage />}
       />
@@ -52,7 +52,7 @@ export default function AppRoutes() {
       <Route
         path="/locations"
         element={<StoreLocatorPage />}
-      /> */}
+      />
 
       {/* Admin */}
 
