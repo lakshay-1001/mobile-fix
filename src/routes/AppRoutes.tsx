@@ -14,6 +14,8 @@ import LoginPage from "../pages/admin/LoginPage";
 
 import Header from "../components/layout/Header";
 import AnnouncementBar from "../components/layout/AnnouncementBar";
+import TestPage from "../pages/admin/TestPage";
+import DashboardPage from "../pages/admin/DashboardPage";
 
 export default function AppRoutes() {
   return (
@@ -59,6 +61,16 @@ export default function AppRoutes() {
       <Route
         path="/admin"
         element={<LoginPage />}
+      />
+
+      <Route
+        path="/admin/dashboard"
+        element={<DashboardPage />}
+      />
+      
+      <Route
+        path="/admin/test"
+        element={<TestPage />}
       />
     </Routes>
   );
