@@ -7,6 +7,8 @@ import TestimonialSection from "../components/sections/TestimonialSection";
 import FAQSection from "../components/sections/FAQSection";
 import CTASection from "../components/sections/CTASection";
 import Footer from "../components/layout/Footer";
+// import ReviewsSection from "../components/reviews/ReviewsSection";
+import SubmitReviewSection from "../components/reviews/SubmitReviewSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +19,8 @@ export default function HomePage() {
       <HowItWorksSection />
       <WhyChooseUsSection />
       <TestimonialSection />
+      <SubmitReviewSection />
+      {/* <ReviewsSection /> */}
       <FAQSection />
       <CTASection />
       <Footer />

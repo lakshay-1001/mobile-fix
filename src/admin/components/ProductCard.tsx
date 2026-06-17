@@ -175,7 +175,9 @@ export default function ProductCard({
           flex
           items-center
           gap-3
-
+          bg-red-50
+          w-full
+          h-full
           text-left
           "
         >
@@ -185,7 +187,7 @@ export default function ProductCard({
             <ChevronDown size={20} />
           )}
 
-          <div>
+          <div className="w-full">
             <h3
               className="
               font-bold
@@ -207,7 +209,7 @@ export default function ProductCard({
         </button>
 
         <div className="flex gap-2">
-          <button
+          {/* <button
             className="
             h-10
             w-10
@@ -222,7 +224,7 @@ export default function ProductCard({
             "
           >
             <Pencil size={16} />
-          </button>
+          </button> */}
 
           <button
             onClick={
