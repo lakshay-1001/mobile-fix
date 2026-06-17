@@ -156,6 +156,9 @@ export default function ProductCard({
       shadow-sm
       overflow-hidden
       "
+      onClick={() =>
+        setOpen(!open)
+      }
     >
       <div
         className="
@@ -175,7 +178,6 @@ export default function ProductCard({
           flex
           items-center
           gap-3
-          bg-red-50
           w-full
           h-full
           text-left
