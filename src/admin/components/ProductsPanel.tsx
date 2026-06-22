@@ -16,8 +16,12 @@ import {
 } from "../../data/productService";
 
 export default function ProductsPanel() {
-  const [products, setProducts] =
-    useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] =
+    useState(1);
+
+  const PRODUCTS_PER_PAGE = 10;
 
   const [search, setSearch] =
     useState("");
@@ -30,15 +34,21 @@ export default function ProductsPanel() {
   }, []);
 
   const loadProducts = async () => {
-    const { data, error } =
-      await getProducts();
+    try {
+      setLoading(true);
 
-    if (error) {
-      console.error(error);
-      return;
+      const { data, error } =
+        await getProducts();
+
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      setProducts(data || []);
+    } finally {
+      setLoading(false);
     }
-
-    setProducts(data || []);
   };
 
   const handleCreateProduct = async (
@@ -71,25 +81,33 @@ export default function ProductsPanel() {
     await loadProducts();
   };
 
-  const filteredProducts =
-    useMemo(() => {
-      return products.filter(
-        (product) =>
-          product.name
-            .toLowerCase()
-            .includes(
-              search.toLowerCase()
-            ) ||
-          (
-            product.search_keywords ??
-            ""
-          )
-            .toLowerCase()
-            .includes(
-              search.toLowerCase()
-            )
-      );
-    }, [products, search]);
+  const filteredProducts = useMemo(() => {
+  return products.filter(
+    (product) =>
+      product.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      (
+        product.search_keywords ??
+        ""
+      )
+        .toLowerCase()
+        .includes(search.toLowerCase())
+  );
+}, [products, search]);
+
+const totalPages = Math.ceil(
+  filteredProducts.length /
+    PRODUCTS_PER_PAGE
+);
+
+const paginatedProducts =
+  filteredProducts.slice(
+    (currentPage - 1) *
+      PRODUCTS_PER_PAGE,
+    currentPage *
+      PRODUCTS_PER_PAGE
+  );
 
   return (
     <>
@@ -238,7 +256,17 @@ export default function ProductsPanel() {
 
         {/* Products */}
 
-        {filteredProducts.length === 0 ? (
+        {loading ? (
+          <div className="space-y-5">
+            {Array.from({ length: 6 }).map(
+              (_, index) => (
+                <ProductSkeleton
+                  key={index}
+                />
+              )
+            )}
+          </div>
+        ) : filteredProducts.length === 0 ? (
           <div
             className="
             bg-white
@@ -296,7 +324,7 @@ export default function ProductsPanel() {
           </div>
         ) : (
           <div className="space-y-5">
-            {filteredProducts.map(
+            {paginatedProducts.map(
               (product) => (
                 <ProductCard
                   key={product.id}
@@ -309,8 +337,110 @@ export default function ProductsPanel() {
             )}
           </div>
         )}
+        <div
+          className="
+          flex
+          items-center
+          justify-center
+          gap-3
+          mt-8
+          "
+        >
+          <button
+            disabled={currentPage === 1}
+            onClick={() =>
+              setCurrentPage((p) => p - 1)
+            }
+            className="
+            w-[80px]
+            h-[44px]
+            px-4
+            py-2
+
+            rounded-xl
+
+            border
+
+            disabled:opacity-50
+            "
+          >
+            Previous
+          </button>
+
+          <span
+            className="
+            px-4
+            py-2
+
+            font-semibold
+            "
+          >
+            {currentPage} / {totalPages || 1}
+          </span>
+
+          <button
+            disabled={
+              currentPage === totalPages
+            }
+            onClick={() =>
+              setCurrentPage((p) => p + 1)
+            }
+            className="
+            w-[80px]
+            h-[44px]
+            px-4
+            py-2
+
+            rounded-xl
+
+            border
+
+            disabled:opacity-50
+            "
+          >
+            Next
+          </button>
+        </div>
 
       </div>
     </>
+  );
+}
+
+function ProductSkeleton() {
+  return (
+    <div
+      className="
+      bg-white
+      rounded-[28px]
+      border
+      border-[#f0e9f3]
+      shadow-sm
+      p-5
+
+      animate-pulse
+      "
+    >
+      <div
+        className="
+        h-6
+        w-[220px]
+
+        rounded-lg
+        bg-[#f2edf4]
+        mb-4
+        "
+      />
+
+      <div
+        className="
+        h-4
+        w-[120px]
+
+        rounded-lg
+        bg-[#f2edf4]
+        "
+      />
+    </div>
   );
 }

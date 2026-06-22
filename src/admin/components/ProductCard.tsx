@@ -48,6 +48,18 @@ export default function ProductCard({
   const parts =
     product.product_parts || [];
 
+  const [partSearch, setPartSearch] =
+    useState("");
+
+  const filteredParts =
+    parts.filter((part) =>
+      part.part_name
+        .toLowerCase()
+        .includes(
+          partSearch.toLowerCase()
+        )
+    );
+
   const handleAddPart =
     async () => {
       if (
@@ -156,9 +168,6 @@ export default function ProductCard({
       shadow-sm
       overflow-hidden
       "
-      onClick={() =>
-        setOpen(!open)
-      }
     >
       <div
         className="
@@ -168,12 +177,12 @@ export default function ProductCard({
         flex
         items-center
         justify-between
-        "
+        " 
+        onClick={() =>
+          setOpen(!open)
+        }
       >
         <button
-          onClick={() =>
-            setOpen(!open)
-          }
           className="
           flex
           items-center
@@ -260,8 +269,35 @@ export default function ProductCard({
           p-5
           "
         >
+          <div className="mb-4">
+
+            <input
+              placeholder="Search part..."
+              value={partSearch}
+              onChange={(e) =>
+                setPartSearch(
+                  e.target.value
+                )
+              }
+              className="
+              w-full
+
+              h-12
+
+              px-4
+
+              rounded-xl
+
+              border
+              border-[#ece7ef]
+
+              bg-white
+              "
+            />
+
+          </div>
           <div className="space-y-3">
-            {parts.map((part) => (
+            {filteredParts.map((part) => (
               <div
                 key={part.id}
                 className="
@@ -273,7 +309,7 @@ export default function ProductCard({
 
                 rounded-2xl
 
-                bg-[#faf7fb]
+                bg-[#dedede]
                 "
               >
                 <div>
@@ -420,7 +456,21 @@ export default function ProductCard({
               </div>
             ))}
           </div>
+          {filteredParts.length === 0 && (
+            <div
+              className="
+              py-8
 
+              text-center
+
+              text-gray-500
+
+              font-medium
+              "
+            >
+              No such part found
+            </div>
+          )}
           <div className="mt-5">
             {!showAddPart ? (
               <button
@@ -498,6 +548,8 @@ export default function ProductCard({
                       handleAddPart
                     }
                     className="
+                    w-[80px]
+                    h-[44px]
                     h-11
                     px-5
 
@@ -520,6 +572,8 @@ export default function ProductCard({
                       )
                     }
                     className="
+                    w-[80px]
+                    h-[44px]
                     h-11
                     px-5
 

@@ -6,6 +6,7 @@ export interface Review {
   review: string;
   rating: number;
   approved: boolean;
+  created_at: string;
 }
 
 export async function getReviews() {

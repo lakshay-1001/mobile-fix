@@ -1,18 +1,15 @@
-import {
-  useEffect,
-  useState,
-} from "react";
-
+import { useEffect, useState } from "react";
 import {
   LayoutDashboard,
   Smartphone,
   MessageSquare,
   Settings,
   LogOut,
+  Menu,
+  X,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
-
 import { supabase } from "../../lib/supabase";
 
 import DashboardStats from "../../admin/components/DashboardStats";
@@ -23,8 +20,10 @@ import SettingsPanel from "../../admin/components/SettingsPanel";
 export default function DashboardPage() {
   const navigate = useNavigate();
 
-  const [activeMenu, setActiveMenu] =
-    useState("products");
+  const [activeMenu, setActiveMenu] = useState("dashboard");
+
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false);
 
   const [stats, setStats] =
     useState({
@@ -104,122 +103,219 @@ export default function DashboardPage() {
   const handleLogout =
     async () => {
       await supabase.auth.signOut();
-
       navigate("/admin");
     };
 
   return (
-    <div className="min-h-screen bg-[#faf5fb] flex">
+    <div className="min-h-screen bg-[#faf5fb] flex relative">
+
+      {/* Mobile Header */}
+
+      <div
+        className="
+        lg:hidden
+
+        fixed
+        top-0
+        left-0
+        right-0
+
+        h-16
+
+        bg-white
+
+        border-b
+        border-[#f1edf3]
+
+        flex
+        items-center
+        justify-between
+
+        px-5
+
+        z-40
+        "
+      >
+        <h1
+          className="
+          text-xl
+          font-black
+          text-[#b7004f]
+          "
+        >
+          AZAN Admin
+        </h1>
+
+        <button
+          onClick={() =>
+            setSidebarOpen(true)
+          }
+        >
+          <Menu size={24} />
+        </button>
+      </div>
+
+      {/* Overlay */}
+
+      {sidebarOpen && (
+        <div
+          onClick={() =>
+            setSidebarOpen(false)
+          }
+          className="
+          fixed
+          inset-0
+
+          bg-black/40
+
+          z-40
+
+          lg:hidden
+          "
+        />
+      )}
+
+      {/* Sidebar */}
 
       <aside
-        className="
+        className={`
+        fixed
+        lg:static
+
+        top-0
+        left-0
+
+        h-screen
+
         w-[280px]
+
         bg-white
+
         border-r
         border-[#f1edf3]
 
         flex
         flex-col
-        "
+
+        z-50
+
+        transition-transform
+        duration-300
+
+        ${
+          sidebarOpen
+            ? "translate-x-0"
+            : "-translate-x-full lg:translate-x-0"
+        }
+        `}
       >
         <div
-            className="
-            p-6
+          className="
+          p-6
 
-            border-b
-            border-[#f1edf3]
-            "
-            >
-          <h1 className="text-2xl font-black text-[#b7004f]">
-            AZAN Admin
-          </h1>
+          border-b
+          border-[#f1edf3]
 
-          <p className="text-gray-500 text-sm mt-1">
-            Repair Management
-          </p>
+          flex
+          items-center
+          justify-between
+          "
+        >
+          <div>
+            <h1 className="text-2xl font-black text-[#b7004f]">
+              AZAN Admin
+            </h1>
+
+            <p className="text-gray-500 text-sm mt-1">
+              Repair Management
+            </p>
+          </div>
+
+          <button
+            className="lg:hidden"
+            onClick={() =>
+              setSidebarOpen(false)
+            }
+          >
+            <X size={22} />
+          </button>
         </div>
 
         <div className="flex-1 p-5 space-y-3">
 
           <MenuItem
             icon={
-              <LayoutDashboard
-                size={18}
-              />
+              <LayoutDashboard size={18} />
             }
             title="Dashboard"
             active={
               activeMenu ===
               "dashboard"
             }
-            onClick={() =>
+            onClick={() => {
               setActiveMenu(
                 "dashboard"
-              )
-            }
+              );
+              setSidebarOpen(false);
+            }}
           />
 
           <MenuItem
             icon={
-              <Smartphone
-                size={18}
-              />
+              <Smartphone size={18} />
             }
             title="Products"
             active={
               activeMenu ===
               "products"
             }
-            onClick={() =>
+            onClick={() => {
               setActiveMenu(
                 "products"
-              )
-            }
+              );
+              setSidebarOpen(false);
+            }}
           />
 
           <MenuItem
             icon={
-              <MessageSquare
-                size={18}
-              />
+              <MessageSquare size={18} />
             }
             title="Reviews"
             active={
               activeMenu ===
               "reviews"
             }
-            onClick={() =>
+            onClick={() => {
               setActiveMenu(
                 "reviews"
-              )
-            }
+              );
+              setSidebarOpen(false);
+            }}
           />
 
           <MenuItem
             icon={
-              <Settings
-                size={18}
-              />
+              <Settings size={18} />
             }
             title="Settings"
             active={
               activeMenu ===
               "settings"
             }
-            onClick={() =>
+            onClick={() => {
               setActiveMenu(
                 "settings"
-              )
-            }
+              );
+              setSidebarOpen(false);
+            }}
           />
 
         </div>
 
         <div className="p-4 border-t">
           <button
-            onClick={
-              handleLogout
-            }
+            onClick={handleLogout}
             className="
             w-full
             h-12
@@ -234,26 +330,37 @@ export default function DashboardPage() {
             text-red-500
 
             hover:bg-red-50
+
+            transition-all
             "
           >
             <LogOut size={18} />
             Logout
           </button>
         </div>
-
       </aside>
 
-      <main className="flex-1 p-8">
+      {/* Main */}
 
+      <main
+        className="
+        flex-1
+
+        p-4
+        md:p-6
+        lg:p-8
+
+        pt-20
+        lg:pt-8
+        "
+      >
         {activeMenu ===
           "dashboard" && (
           <DashboardStats
             products={
               stats.products
             }
-            parts={
-              stats.parts
-            }
+            parts={stats.parts}
             reviews={
               stats.reviews
             }
@@ -277,9 +384,7 @@ export default function DashboardPage() {
           "settings" && (
           <SettingsPanel />
         )}
-
       </main>
-
     </div>
   );
 }
@@ -301,38 +406,38 @@ function MenuItem({
     <button
       onClick={onClick}
       className={`
-        w-full
+      w-full
 
-        h-[54px]
+      h-[54px]
 
-        px-5
+      px-5
 
-        rounded-2xl
+      rounded-2xl
 
-        flex
-        items-center
+      flex
+      items-center
 
-        transition-all
-        duration-300
+      transition-all
+      duration-300
 
-        ${
-          active
-            ? `
-              bg-gradient-to-r
-              from-[#b7004f]
-              to-[#8138b2]
+      ${
+        active
+          ? `
+            bg-gradient-to-r
+            from-[#b7004f]
+            to-[#8138b2]
 
-              text-white
+            text-white
 
-              shadow-lg
-              shadow-[#b7004f]/20
-            `
-            : `
-              text-[#2d2d2d]
+            shadow-lg
+            shadow-[#b7004f]/20
+          `
+          : `
+            text-[#2d2d2d]
 
-              hover:bg-[#f7f1f6]
-            `
-        }
+            hover:bg-[#f7f1f6]
+          `
+      }
       `}
     >
       <div
