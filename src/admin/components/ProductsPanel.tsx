@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Plus,
   Search,
@@ -29,11 +29,7 @@ export default function ProductsPanel() {
   const [showModal, setShowModal] =
     useState(false);
 
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
-  const loadProducts = async () => {
+  const loadProducts = useCallback(async () => {
     try {
       setLoading(true);
 
@@ -49,7 +45,11 @@ export default function ProductsPanel() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    void loadProducts();
+  }, [loadProducts]);
 
   const handleCreateProduct = async (
     name: string,

@@ -2,37 +2,54 @@
 import { features } from "../../data/features";
 import FeatureCard from "../cards/FeatureCard";
 import repairImage from "../../assets/images/repair.png";
+import SectionHeading from "../common/SectionHeading";
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="py-28 bg-[#f3f3f4]">
+    <section id="why-us" className="overflow-hidden bg-[#f3f3f4] py-16 md:py-24">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="grid sm:grid-cols-2 gap-6">
-            {features.map((feature) => (
-              <FeatureCard key={feature.title} {...feature} />
-            ))}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHeading
+              title="Why Dubai Customers"
+              highlight="Choose Us"
+              description="Clear communication, convenient doorstep service and support after your repair."
+            />
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
+              {features.map((feature) => (
+                <FeatureCard key={feature.title} {...feature} />
+              ))}
+            </div>
           </div>
 
           <div className="relative">
             <div className="absolute -inset-4 gradient-bg blur-2xl opacity-5 rounded-full" />
             <img
               src={repairImage}
-              alt="Repair"
+              alt="Technician repairing a mobile phone with precision tools"
+              width="512"
+              height="512"
+              loading="lazy"
               className="rounded-[40px] shadow-2xl w-full relative z-10"
             />
             <div
   className="
   absolute
 
-  bottom-10
-  -left-10
+  bottom-3
+  left-3
+  right-3
+
+  lg:bottom-10
+  lg:-left-10
+  lg:right-auto
 
   z-20
 
-  max-w-xs
+  lg:max-w-xs
 
-  p-8
+  p-5
+  sm:p-8
 
   rounded-3xl
 
@@ -48,15 +65,9 @@ export default function WhyChooseUsSection() {
   animate-float
   "
 >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-10 h-10 rounded-full bg-[#b7004f] flex items-center justify-center text-white font-bold">A</div>
-                <div>
-                  <h4 className="font-semibold">Ahmed K.</h4>
-                  <p className="text-xs text-[#5a4045]">Dubai Marina</p>
-                </div>
-              </div>
-              <p className="text-sm italic text-[#5a4045]">
-                "Fixed my iPhone screen in my office lobby in 20 minutes. Truly a life saver!"
+              <p className="font-bold text-[#171217]">Clear repair approval</p>
+              <p className="mt-2 text-sm leading-6 text-[#5a4045]">
+                Device condition, expected work, parts, timing, price and warranty are explained before a repair begins.
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCallback } from "react";
 import { motion, Variants } from "framer-motion";
 
 import ReviewCard from "./ReviewCard";
@@ -49,11 +50,7 @@ export default function ReviewsSection() {
   const [loading, setLoading] =
     useState(true);
 
-  useEffect(() => {
-    loadReviews();
-  }, []);
-
-  const loadReviews = async () => {
+  const loadReviews = useCallback(async () => {
     try {
       const { data, error } =
         await getApprovedReviews();
@@ -67,7 +64,11 @@ export default function ReviewsSection() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    void loadReviews();
+  }, [loadReviews]);
 
   if (loading) {
     return (

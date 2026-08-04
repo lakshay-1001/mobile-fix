@@ -12,6 +12,7 @@ export default function FAQItem({
   answer,
 }: Props) {
   const [open, setOpen] = useState(false);
+  const answerId = `faq-answer-${question.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
     <motion.div
@@ -30,7 +31,10 @@ export default function FAQItem({
       "
     >
       <button
+        type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={answerId}
         className="
           w-full
 
@@ -38,13 +42,12 @@ export default function FAQItem({
           items-center
           justify-between
 
-          pl-10
-          pr-5
+          px-5
 
-          md:pl-12
-          md:pr-6
+          md:px-8
 
-          py-7
+          py-5
+          md:py-6
 
           text-left
         "
@@ -52,7 +55,7 @@ export default function FAQItem({
         <span
           className="
 
-            text-[20px]
+            text-[17px]
             md:text-[22px]
 
             font-bold
@@ -60,7 +63,6 @@ export default function FAQItem({
             text-[#222]
 
             leading-8
-            ml-8
           "
         >
           {question}
@@ -70,8 +72,8 @@ export default function FAQItem({
           className="
             flex-shrink-0
 
-            w-[52px]
-            h-[52px]
+            w-[44px]
+            h-[44px]
 
             rounded-full
 
@@ -115,6 +117,8 @@ export default function FAQItem({
             }}
           >
             <div
+              id={answerId}
+              role="region"
               className="
                 px-6
                 md:px-8
@@ -147,7 +151,7 @@ export default function FAQItem({
 
                   text-[#666]
 
-                  max-w-[90%]
+                  max-w-none
                 "
               >
                 {answer}

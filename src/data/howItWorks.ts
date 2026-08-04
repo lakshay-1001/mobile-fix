@@ -8,30 +8,30 @@ export interface Step {
 export const howItWorks: Step[] = [
   {
     id: 1,
-    title: "Book Online",
+    title: "Contact Us",
     description:
-      "Select your device and issue in under 60 seconds.",
+      "Send an inquiry with your device model and the problem you are experiencing.",
     icon: "MousePointerClick",
   },
   {
     id: 2,
-    title: "We Arrive",
+    title: "Receive a Quote",
     description:
-      "A certified technician meets you at your location.",
+      "We confirm availability, the expected work, timing, parts and estimated cost.",
     icon: "Car",
   },
   {
     id: 3,
-    title: "We Fix",
+    title: "Approve the Repair",
     description:
-      "Repairs are done on-site or picked up for complex work.",
+      "Work begins only after you approve the quotation and applicable warranty information.",
     icon: "Wrench",
   },
   {
     id: 4,
-    title: "You Pay",
+    title: "Test and Complete",
     description:
-      "Check your device and pay securely after testing.",
+      "Review the completed work, test the device and receive the repair record or invoice.",
     icon: "BadgeCheck",
   },
 ];

@@ -1,83 +1,28 @@
-import { MessageCircle, Clock3 } from "lucide-react";
+import { Clock3, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl, HAS_WHATSAPP, OPENING_HOURS_SHORT } from "../../config/site";
 
 export default function AnnouncementBar() {
   return (
-    <div
-      className="
-      fixed
-      top-0
-      left-0
-      right-0
-      z-[60]
-
-      h-8
-      sm:h-10
-
-      bg-[#b7004f]
-
-      text-white
-
-      flex
-      items-center
-      justify-center
-
-      px-2
-      sm:px-4
-      "
+    <aside
+      aria-label="Business contact and opening hours"
+      className="fixed inset-x-0 top-0 z-[60] flex h-9 items-center justify-center bg-[#b7004f] px-2 text-white sm:h-10 sm:px-4"
     >
-      <div
-        className="
-        flex
-        items-center
-        justify-center
-
-        gap-2
-        sm:gap-3
-
-        text-[10px]
-        sm:text-sm
-
-        font-medium
-
-        whitespace-nowrap
-        overflow-hidden
-        text-ellipsis
-        "
-      >
-        <span
-          className="
-          flex
-          items-center
-          gap-1
-          shrink-0
-          "
+      <div className="flex items-center justify-center gap-2 whitespace-nowrap text-[11px] font-medium sm:gap-3 sm:text-sm">
+        <a
+          href={getWhatsAppUrl()}
+          target={HAS_WHATSAPP ? "_blank" : undefined}
+          rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
+          className="flex items-center gap-1.5 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          <MessageCircle
-            size={12}
-            className="sm:w-4 sm:h-4"
-          />
-
-          <span>
-            WhatsApp: +971 50 579 8407
-          </span>
-        </span>
-
-        <span className="hidden sm:block">
-          |
-        </span>
-
-        <span
-          className="
-          hidden
-          md:flex
-          items-center
-          gap-1
-          "
-        >
-          <Clock3 size={14} />
-          Open 9AM – 9PM | 7 Days
+          <MessageCircle size={13} className="sm:h-4 sm:w-4" aria-hidden="true" />
+          WhatsApp us
+        </a>
+        <span className="hidden sm:block" aria-hidden="true">|</span>
+        <span className="hidden items-center gap-1.5 sm:flex">
+          <Clock3 size={14} aria-hidden="true" />
+          {OPENING_HOURS_SHORT}
         </span>
       </div>
-    </div>
+    </aside>
   );
 }

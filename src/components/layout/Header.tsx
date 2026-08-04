@@ -1,216 +1,147 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, MessageCircle, Headphones } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Menu, X, MessageCircle, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  BRAND_MARK_SMALL,
+  getWhatsAppUrl,
+  HAS_CONTACT_PHONE,
+  HAS_WHATSAPP,
+  PHONE_LINK,
+} from "../../config/site";
 
-// const navItems = ["Home", "Repairs", "Track", "Pricing"];
+const navItems = [
+  { label: "Services", href: "/services" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Why us", href: "/#why-us" },
+  { label: "FAQs", href: "/#faqs" },
+  { label: "Our shop", href: "/locations" },
+  { label: "About", href: "/about" },
+  { label: "Guides", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const whatsappUrl = getWhatsAppUrl();
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-[40px] left-0 right-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-white/30 shadow-sm">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between gap-6">
-
-          {/* ── Logo ── */}
-          <motion.h1
-            whileHover={{ scale: 1.03 }}
-            className="text-[22px] md:text-[26px] font-black tracking-tight text-[#b7004f] cursor-pointer whitespace-nowrap flex-shrink-0"
-            onClick={() => navigate("/")}
+      <header className="fixed left-0 right-0 top-9 z-50 border-b border-[#eadde5] bg-white/95 shadow-sm backdrop-blur-xl sm:top-10">
+        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 md:px-8">
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
+            aria-label="AZAN Mobile Fix home"
+            className="group flex shrink-0 items-center gap-2 whitespace-nowrap transition-transform hover:scale-[1.02] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b7004f]"
           >
-            AZAN Mobile Fix
-          </motion.h1>
-
-          {/* ── Desktop Nav ── */}
-          <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
-            {/* {navItems.map((item, index) => (
-              <a
-                key={item}
-                href="/"
-                className={`
-                  relative text-[15px] font-semibold transition-all duration-300
-                  ${index === 0 ? "text-[#b7004f]" : "text-[#5a4045]"}
-                  hover:text-[#b7004f]
-                `}
+            <img
+              src={BRAND_MARK_SMALL}
+              alt=""
+              width="64"
+              height="64"
+              className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-sm sm:h-11 sm:w-11"
+            />
+            <span>
+              <span
+                className="flex items-baseline text-[21px] font-[900] leading-none tracking-[-0.045em] sm:text-[27px] lg:text-[24px] xl:text-[28px]"
+                style={{ fontWeight: 900 }}
               >
-                {item}
-                {index === 0 && (
-                  <span className="absolute left-0 -bottom-[3px] h-[2px] w-full bg-[#b7004f] rounded-full" />
-                )}
-              </a>
-            ))} */}
+                <span className="text-[#b7004f]">AZAN</span>
+                <span className="ml-1.5 text-[#2b1c24] transition-colors group-hover:text-[#b7004f]">
+                  Mobile Fix
+                </span>
+              </span>
+              <span className="mt-1 hidden text-[9px] font-extrabold uppercase tracking-[0.28em] text-[#8138b2] sm:block">
+                Doorstep Repair Dubai
+              </span>
+            </span>
+          </Link>
+
+          <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-4 xl:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="whitespace-nowrap text-sm font-semibold text-[#5a4045] transition-colors hover:text-[#b7004f] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b7004f]"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* ── Desktop Actions ── */}
-          <div className="hidden md:flex items-center gap-3 shrink-0">
-
-            {/* Support */}
-            <motion.button
-              whileHover={{
-                scale: 1.08,
-                rotate: 5,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              className="
-                h-[42px]
-                w-[42px]
-
-                flex
-                items-center
-                justify-center
-
-                rounded-full
-
-                text-[#5a4045]
-
-                hover:text-[#b7004f]
-                hover:bg-pink-50
-
-                transition-all
-                duration-300
-              "
+          <div className="hidden shrink-0 items-center gap-2 xl:flex">
+            <a
+              href={PHONE_LINK}
+              aria-label={HAS_CONTACT_PHONE ? "Call AZAN Mobile Fix" : "Calling is temporarily unavailable"}
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#5a4045] transition-colors hover:bg-pink-50 hover:text-[#b7004f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
             >
-              <Headphones size={20} />
-            </motion.button>
-
-            {/* WhatsApp */}
-            <motion.button
-              whileHover={{
-                y: -2,
-                scale: 1.02,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
-              className="
-                h-[44px]
-
-                min-w-[155px]
-                px-5
-
-                rounded-full
-
-                flex
-                items-center
-                justify-center
-                gap-2
-
-                border
-                border-[#b7004f]
-
-                bg-white/70
-                backdrop-blur-md
-
-                text-[#b7004f]
-                text-[14px]
-                font-semibold
-
-                hover:bg-[#b7004f]
-                hover:text-white
-
-                transition-all
-                duration-300
-              "
+              <Phone size={19} aria-hidden="true" />
+            </a>
+            <a
+              href={whatsappUrl}
+              target={HAS_WHATSAPP ? "_blank" : undefined}
+              rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#b7004f] px-4 text-sm font-semibold text-[#b7004f] transition-colors hover:bg-[#b7004f] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
             >
-              <MessageCircle size={16} />
-              WhatsApp Us
-            </motion.button>
-
-            {/* Book Now */}
-            <motion.button
-              whileHover={{
-                y: -2,
-                scale: 1.02,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
-              className="
-                h-[44px]
-
-                min-w-[125px]
-                px-6
-
-                rounded-full
-
-                flex
-                items-center
-                justify-center
-
-                text-white
-                text-[14px]
-                font-semibold
-
-                bg-gradient-to-r
-                from-[#b7004f]
-                via-[#c2185b]
-                to-[#8138b2]
-
-                shadow-lg
-                shadow-[#b7004f]/20
-
-                hover:shadow-xl
-                hover:shadow-[#b7004f]/35
-
-                transition-all
-                duration-300
-              "
-            >
-              Book Now
-            </motion.button>
-
+              <MessageCircle size={17} aria-hidden="true" />
+              {HAS_WHATSAPP ? "WhatsApp Us" : "Contact us"}
+            </a>
           </div>
 
-          {/* ── Mobile Hamburger ── */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-[#b7004f] flex-shrink-0"
+          <button
+            type="button"
+            onClick={() => setOpen((current) => !current)}
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#b7004f] hover:bg-pink-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f] xl:hidden"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+            {open ? <X size={25} aria-hidden="true" /> : <Menu size={25} aria-hidden="true" />}
+          </button>
         </div>
       </header>
 
-      {/* ── Mobile Menu ── */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
+          <motion.nav
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25 }}
-            className="fixed top-[116px] left-4 right-4 z-40 md:hidden bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden"
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+            className="fixed left-3 right-3 top-[108px] z-40 overflow-hidden rounded-2xl border border-[#eadde5] bg-white shadow-2xl sm:top-[120px] xl:hidden"
           >
-            <div className="flex flex-col">
-              {/* {navItems.map((item, index) => (
-                <a
-                  key={item}
-                  href="/"
-                  className={`
-                    px-6 py-4 border-b border-gray-100 text-[15px] font-medium transition-colors hover:bg-pink-50
-                    ${index === 0 ? "text-[#b7004f]" : "text-[#5a4045]"}
-                  `}
+            <div className="flex flex-col p-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-4 py-3.5 text-[15px] font-semibold text-[#5a4045] hover:bg-pink-50 hover:text-[#b7004f] focus-visible:outline-2 focus-visible:outline-[#b7004f]"
                 >
-                  {item}
+                  {item.label}
+                </Link>
+              ))}
+              <div className="mt-1 grid grid-cols-1 gap-2 border-t border-gray-100 p-2 sm:grid-cols-2">
+                <a href={PHONE_LINK} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#b7004f] font-semibold text-[#b7004f]">
+                  <Phone size={17} aria-hidden="true" /> {HAS_CONTACT_PHONE ? "Call now" : "Call unavailable"}
                 </a>
-              ))}  */}
-
-              <div className="p-4 flex flex-col gap-3">
-                <button className="w-full h-[46px] rounded-full border border-[#b7004f] text-[#b7004f] text-[15px] font-semibold flex items-center justify-center gap-2 hover:bg-[#b7004f] hover:text-white transition-all duration-300">
-                  <MessageCircle size={17} />
-                  WhatsApp Us
-                </button>
-                <button className="w-full h-[46px] rounded-full text-white text-[15px] font-semibold bg-gradient-to-r from-[#b7004f] to-[#8138b2] shadow-md">
-                  Book Now
-                </button>
+                <a href={whatsappUrl} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#b7004f] to-[#8138b2] font-semibold text-white">
+                  <MessageCircle size={17} aria-hidden="true" /> {HAS_WHATSAPP ? "WhatsApp" : "Send inquiry"}
+                </a>
               </div>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </>

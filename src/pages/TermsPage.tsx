@@ -10,10 +10,17 @@ import {
   AlertTriangle,
   Phone,
 } from "lucide-react";
+import SEO from "../components/seo/SEO";
+import { getWhatsAppUrl, HAS_WHATSAPP, LEGAL_BUSINESS_NAME } from "../config/site";
 
 export default function TermsPage() {
   return (
     <WebsiteLayout>
+      <SEO
+        title="Terms of Service"
+        description="Review the repair service terms, estimates, payment conditions and customer responsibilities for AZAN Mobile Fix in Dubai."
+        path="/terms"
+      />
       <LegalPageLayout title="Terms of Service">
 
         {/* Effective Date */}
@@ -37,7 +44,7 @@ export default function TermsPage() {
           mb-8
           "
         >
-          Effective Date: January 2026
+          Effective Date: 3 August 2026
         </div>
 
         {/* Intro Banner */}
@@ -81,12 +88,12 @@ export default function TermsPage() {
             max-w-3xl
             "
           >
-            AZAN Mobile Fix is committed to
+            AZAN Mobile Fix, operated by {LEGAL_BUSINESS_NAME}, is committed to
             providing transparent pricing,
             professional repair services,
-            genuine-quality replacement parts,
+            clear information about replacement parts,
             and outstanding customer support
-            throughout Dubai.
+            in Dubai.
           </p>
         </div>
 
@@ -104,10 +111,7 @@ export default function TermsPage() {
             </p>
 
             <p>
-              Repairs may be performed at
-              customer locations, business
-              premises, or authorized service
-              locations depending on the request.
+              Repair availability is confirmed for each request. Unless otherwise agreed in writing, customers should bring devices to our Bur Dubai shop.
             </p>
           </LegalCard>
 
@@ -162,9 +166,7 @@ export default function TermsPage() {
             </p>
 
             <p>
-              Refunds may only be granted when
-              repairs cannot be completed or
-              where required by applicable laws.
+              If a service is defective, customers may be entitled to re-performance, an appropriate refund, compensation or another remedy required by applicable UAE law.
             </p>
           </LegalCard>
 
@@ -173,16 +175,11 @@ export default function TermsPage() {
             icon={<AlertTriangle size={22} />}
           >
             <p>
-              AZAN Mobile Fix shall not be liable
-              for data loss, software corruption,
-              manufacturer defects, or indirect
-              damages resulting from repair work.
+              Nothing in these Terms excludes or limits any right or remedy that cannot lawfully be excluded under UAE consumer protection law, including responsibility for damage caused by negligence or defective service.
             </p>
 
             <p>
-              Customers are solely responsible
-              for backing up their data prior
-              to repair.
+              Customers should back up their data and remove passwords where reasonably possible before repair. This precaution does not remove rights that apply under UAE law.
             </p>
           </LegalCard>
 
@@ -256,7 +253,10 @@ export default function TermsPage() {
             team will be happy to assist.
           </p>
 
-          <button
+          <a
+            href={getWhatsAppUrl("Hi AZAN Mobile Fix, I need help with your Terms of Service.")}
+            target={HAS_WHATSAPP ? "_blank" : undefined}
+            rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
             className="
             h-[52px]
 
@@ -277,8 +277,8 @@ export default function TermsPage() {
             duration-300
             "
           >
-            Contact Support
-          </button>
+            Contact Support on WhatsApp
+          </a>
         </div>
 
       </LegalPageLayout>

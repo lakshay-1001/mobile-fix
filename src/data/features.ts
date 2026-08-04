@@ -12,15 +12,15 @@ export const features: Feature[] = [
     icon: "Zap",
   },
   {
-    title: "Certified Pros",
+    title: "Experienced Technicians",
     description:
-      "All technicians are factory-trained and background checked.",
+      "Skilled technicians diagnose and repair a wide range of device faults.",
     icon: "ShieldCheck",
   },
   {
-    title: "OEM Quality",
+    title: "Quality Parts",
     description:
-      "We only use original parts or the highest grade alternatives.",
+      "Part options are explained clearly before your repair begins.",
     icon: "Award",
   },
   {
@@ -32,13 +32,13 @@ export const features: Feature[] = [
   {
     title: "Warranty",
     description:
-      "Industry-leading repair warranty.",
+      "The applicable warranty period is confirmed and recorded for each covered repair.",
     icon: "BadgeCheck",
   },
   {
-    title: "24/7 Support",
+    title: "Daily Support",
     description:
-      "Always available to track your repair.",
+      "Contact our team seven days a week from 10 AM to midnight.",
     icon: "Headphones",
   },
 ];

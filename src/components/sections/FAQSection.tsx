@@ -6,6 +6,7 @@ import { faqs } from "../../data/faq";
 export default function FAQSection() {
   return (
     <section
+      id="faqs"
       className="
         relative
         overflow-hidden
@@ -27,7 +28,8 @@ export default function FAQSection() {
           left-1/2
           -translate-x-1/2
 
-          w-[700px]
+          w-full
+          max-w-[700px]
           h-[350px]
 
           bg-[#b7004f]/5

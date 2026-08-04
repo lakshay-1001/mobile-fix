@@ -1,4 +1,5 @@
 import { services } from "../../data/services";
+import { Link } from "react-router-dom";
 
 import Container from "../common/Container";
 import SectionHeading from "../common/SectionHeading";
@@ -8,9 +9,11 @@ export default function ServicesSection() {
   return (
     <section
       className="
-      py-24
+      py-16
+      md:py-24
       bg-gray-50
     "
+      id="services"
     >
       <Container>
         <div
@@ -28,22 +31,17 @@ export default function ServicesSection() {
             description="Precision engineering meets rapid service."
           />
 
-          <button
-            className="
-            text-[#b7004f]
-            font-semibold
-            mt-4
-          "
-          >
-            View All Services
-          </button>
+          <div className="mt-4 flex flex-wrap gap-4 font-semibold text-[#b7004f]">
+            <Link to="/services" className="hover:underline">View all repair services</Link>
+            <a href="#faqs" className="hover:underline">Common repair questions</a>
+          </div>
         </div>
 
         <div
           className="
           grid
           md:grid-cols-2
-          xl:grid-cols-3
+          lg:grid-cols-2
           gap-8
         "
         >

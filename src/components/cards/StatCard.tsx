@@ -51,7 +51,7 @@ export default function StatCard({
         text-center
         "
       >
-        <h3
+        <p
           className="
           text-[32px]
           md:text-[42px]
@@ -69,7 +69,7 @@ export default function StatCard({
           "
         >
           {value}
-        </h3>
+        </p>
 
         <div
           className="

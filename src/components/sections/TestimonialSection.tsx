@@ -1,5 +1,6 @@
 ﻿import { useEffect, useMemo, useState } from "react";
 
+import { useCallback } from "react";
 import Container from "../common/Container";
 import SectionHeading from "../common/SectionHeading";
 
@@ -21,11 +22,7 @@ export default function TestimonialSection() {
   const [loading, setLoading] =
     useState(true);
 
-  useEffect(() => {
-    loadReviews();
-  }, []);
-
-  const loadReviews = async () => {
+  const loadReviews = useCallback(async () => {
     try {
       const { data, error } =
         await getApprovedReviews();
@@ -39,7 +36,11 @@ export default function TestimonialSection() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    void loadReviews();
+  }, [loadReviews]);
 
   const averageRating =
     useMemo(() => {
@@ -58,7 +59,7 @@ export default function TestimonialSection() {
     }, [reviews]);
 
   return (
-    <section className="py-28 bg-white">
+    <section id="reviews" className="bg-white py-16 md:py-24">
       <Container>
 
         <div
@@ -76,9 +77,9 @@ export default function TestimonialSection() {
           <div className="space-y-6">
 
             <SectionHeading
-              title="Real"
-              highlight="Testimonials"
-              description="Trusted by Dubai customers for fast, convenient repairs delivered at home or office."
+              title="Customer"
+              highlight="Reviews"
+              description="Read reviews submitted by customers and approved before publication."
             />
 
             <p
@@ -89,9 +90,7 @@ export default function TestimonialSection() {
               max-w-2xl
               "
             >
-              Hear from actual clients who
-              experienced our same-day
-              phone and laptop service.
+              Reviews reflect individual customer experiences. Approval means a review passed moderation; it does not by itself verify a repair purchase.
             </p>
 
             <div
@@ -242,7 +241,7 @@ export default function TestimonialSection() {
               )}
 
             {!loading &&
-              reviews.map((item) => (
+              reviews.slice(0, 3).map((item) => (
                 <div
                   key={item.id}
                   className="
@@ -287,7 +286,7 @@ export default function TestimonialSection() {
                         text-[#5a4045]
                         "
                       >
-                        Verified Customer
+                        Published customer review
                       </p>
                     </div>
 
@@ -310,7 +309,7 @@ export default function TestimonialSection() {
                     >
                       {Array.from({
                         length:
-                          item.rating,
+                          Math.max(0, Math.min(5, item.rating)),
                       }).map(
                         (_, index) => (
                           <Star

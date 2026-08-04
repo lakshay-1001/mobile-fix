@@ -40,7 +40,7 @@ export default function SettingsPanel() {
       );
 
       setPassword("");
-    } catch (err) {
+    } catch {
       alert(
         "Something went wrong"
       );

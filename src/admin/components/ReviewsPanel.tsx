@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   CheckCircle,
   Trash2,
@@ -27,11 +27,7 @@ export default function ReviewsPanel() {
 
   const [activeTab, setActiveTab] = useState<ReviewTab>("all");
 
-  useEffect(() => {
-    loadReviews();
-  }, []);
-
-  const loadReviews = async () => {
+  const loadReviews = useCallback(async () => {
     try {
       setLoading(true);
 
@@ -47,7 +43,11 @@ export default function ReviewsPanel() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    void loadReviews();
+  }, [loadReviews]);
 
   const toggleReview = async (
     id: number,

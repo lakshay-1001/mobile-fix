@@ -10,11 +10,24 @@ import {
   AlertTriangle,
   ShieldCheck,
 } from "lucide-react";
+import SEO from "../components/seo/SEO";
+import { LEGAL_BUSINESS_NAME } from "../config/site";
 
 export default function WarrantyPage() {
   return (
     <WebsiteLayout>
+      <SEO
+        title="Mobile Repair Warranty Dubai"
+        description="Read the AZAN Mobile Fix warranty periods, exclusions and claim process for screen, battery, charging port and motherboard repairs in Dubai."
+        path="/warranty"
+      />
       <LegalPageLayout title="Warranty Policy">
+
+        <div className="mb-8 rounded-2xl border border-[#eadde5] bg-white p-5 text-[#5a4045]">
+          <p className="font-semibold text-[#171217]">Last updated: 3 August 2026</p>
+          <p className="mt-2">AZAN Mobile Fix is operated by {LEGAL_BUSINESS_NAME}. The applicable warranty period, installed parts and coverage must be recorded on the repair invoice or warranty document.</p>
+          <p className="mt-2">This commercial warranty is provided in addition to, and does not replace or reduce, mandatory rights available under UAE consumer protection law.</p>
+        </div>
 
         <div className="space-y-6">
 
@@ -75,9 +88,7 @@ export default function WarrantyPage() {
             icon={<ShieldCheck size={22} />}
           >
             <p>
-              Customers must present the
-              original repair invoice when
-              requesting warranty service.
+              Customers should provide the original or electronic repair invoice when requesting warranty service. We will inspect the device and explain the available warranty or statutory remedy.
             </p>
           </LegalCard>
 

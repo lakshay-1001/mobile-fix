@@ -5,6 +5,7 @@ import {
   Send,
   CheckCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { createReview } from "../../data/userReviewService";
 
@@ -39,30 +40,37 @@ export default function SubmitReviewSection() {
   const [submitted, setSubmitted] =
     useState(false);
 
+  const [errorMessage, setErrorMessage] =
+    useState("");
+
+  const [publicationConsent, setPublicationConsent] =
+    useState(false);
+
   const submitReview =
     async () => {
       if (
         !name.trim() ||
-        !review.trim()
+        !review.trim() ||
+        !publicationConsent
       ) {
-        alert(
-          "Please fill all fields"
-        );
+        setErrorMessage("Please enter your name and review, then confirm publication permission.");
         return;
       }
 
       try {
         setLoading(true);
+        setErrorMessage("");
+        setSubmitted(false);
 
         const { error } =
           await createReview(
-            name,
-            review,
+            name.trim(),
+            review.trim(),
             rating
           );
 
         if (error) {
-          alert(error.message);
+          setErrorMessage("We could not submit your review. Please try again shortly.");
           return;
         }
 
@@ -71,13 +79,14 @@ export default function SubmitReviewSection() {
         setName("");
         setReview("");
         setRating(5);
+        setPublicationConsent(false);
       } finally {
         setLoading(false);
       }
     };
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative overflow-hidden py-16 md:py-24">
 
       {/* Glow */}
 
@@ -88,7 +97,8 @@ export default function SubmitReviewSection() {
         left-1/2
         -translate-x-1/2
 
-        w-[500px]
+        w-full
+        max-w-[500px]
         h-[500px]
 
         rounded-full
@@ -117,13 +127,19 @@ export default function SubmitReviewSection() {
         px-5
         "
       >
-        <div
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            void submitReview();
+          }}
           className="
           glass-card
 
-          rounded-[36px]
+          rounded-[24px]
+          sm:rounded-[36px]
 
-          p-8
+          p-5
+          sm:p-8
           md:p-12
 
           shadow-xl
@@ -167,7 +183,8 @@ export default function SubmitReviewSection() {
 
             <h2
               className="
-              text-4xl
+              text-3xl
+              sm:text-4xl
               md:text-6xl
 
               font-black
@@ -206,6 +223,7 @@ export default function SubmitReviewSection() {
 
           {submitted && (
             <motion.div
+              role="status"
               initial={{
                 opacity: 0,
                 scale: 0.95,
@@ -249,11 +267,17 @@ export default function SubmitReviewSection() {
             </motion.div>
           )}
 
+          {errorMessage && (
+            <p role="alert" className="mb-8 rounded-xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-700">
+              {errorMessage}
+            </p>
+          )}
+
           {/* Rating */}
 
           <div className="mb-8">
 
-            <label
+            <p
               className="
               block
               font-bold
@@ -262,15 +286,18 @@ export default function SubmitReviewSection() {
               "
             >
               Rating
-            </label>
+            </p>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1 sm:gap-2" role="radiogroup" aria-label="Rating out of five stars">
 
               {[1, 2, 3, 4, 5].map(
                 (star) => (
                   <button
                     key={star}
                     type="button"
+                    role="radio"
+                    aria-checked={rating === star}
+                    aria-label={`${star} star${star === 1 ? "" : "s"}`}
                     onClick={() =>
                       setRating(star)
                     }
@@ -279,6 +306,10 @@ export default function SubmitReviewSection() {
                     duration-300
 
                     hover:scale-110
+                    rounded
+                    focus-visible:outline-2
+                    focus-visible:outline-offset-2
+                    focus-visible:outline-[#b7004f]
                     "
                   >
                     <Star
@@ -307,6 +338,7 @@ export default function SubmitReviewSection() {
           <div className="mb-8">
 
             <label
+              htmlFor="reviewer-name"
               className="
               block
 
@@ -320,14 +352,25 @@ export default function SubmitReviewSection() {
             </label>
 
             <input
+              id="reviewer-name"
+              name="name"
+              style={{
+                paddingLeft: "20px",
+                paddingRight: "20px",
+                textIndent: 0,
+              }}
+              autoComplete="name"
+              required
+              maxLength={80}
               value={name}
               onChange={(e) =>
                 setName(
                   e.target.value
                 )
               }
-              placeholder="  Enter your name"
+              placeholder="Enter your name"
               className="
+              form-control
               w-full
 
               h-[60px]
@@ -340,8 +383,6 @@ export default function SubmitReviewSection() {
               bg-white
 
               text-[16px]
-
-              px-6
 
               placeholder:text-gray-400
 
@@ -361,6 +402,7 @@ export default function SubmitReviewSection() {
           <div className="mb-8">
 
             <label
+              htmlFor="customer-review"
               className="
               block
 
@@ -374,6 +416,15 @@ export default function SubmitReviewSection() {
             </label>
 
             <textarea
+              id="customer-review"
+              name="review"
+              style={{
+                padding: "16px 20px",
+                textIndent: 0,
+              }}
+              required
+              minLength={10}
+              maxLength={1000}
               rows={6}
               value={review}
               onChange={(e) =>
@@ -381,8 +432,9 @@ export default function SubmitReviewSection() {
                   e.target.value
                 )
               }
-              placeholder="  Tell us about your experience..."
+              placeholder="Tell us about your experience..."
               className="
+              form-control
               w-full
 
               rounded-2xl
@@ -393,9 +445,6 @@ export default function SubmitReviewSection() {
               bg-white
 
               text-[16px]
-
-              px-6
-              py-5
 
               placeholder:text-gray-400
 
@@ -412,13 +461,31 @@ export default function SubmitReviewSection() {
 
           </div>
 
+          <div className="mb-7 rounded-2xl border border-[#eadde5] bg-white/80 p-4">
+            <label htmlFor="review-publication-consent" className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-[#5a4045]">
+              <input
+                id="review-publication-consent"
+                type="checkbox"
+                required
+                checked={publicationConsent}
+                onChange={(event) => setPublicationConsent(event.target.checked)}
+                className="mt-1 h-5 w-5 shrink-0 accent-[#b7004f]"
+              />
+              <span>
+                I authorise AZAN Mobile Fix to publish my displayed name, rating and review after moderation. I understand that I can request removal through the <Link to="/contact" className="font-semibold text-[#b7004f] hover:underline">contact page</Link>. Please do not include passwords, payment information or sensitive device data. Read the <Link to="/privacy" className="font-semibold text-[#b7004f] hover:underline">Privacy Policy</Link>.
+              </span>
+            </label>
+          </div>
+
           {/* Button */}
 
           <button
-            onClick={submitReview}
-            disabled={loading}
+            type="submit"
+            disabled={loading || !publicationConsent}
             className="
-            min-w-[240px]
+            w-full
+            sm:w-auto
+            sm:min-w-[240px]
 
             h-[60px]
 
@@ -454,14 +521,14 @@ export default function SubmitReviewSection() {
             duration-300
             "
           >
-            <Send size={20} />
+            <Send size={20} aria-hidden="true" />
 
             {loading
               ? "Submitting..."
               : "Submit Review"}
           </button>
 
-        </div>
+        </form>
       </motion.div>
     </section>
   );

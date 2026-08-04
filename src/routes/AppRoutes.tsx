@@ -1,77 +1,64 @@
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-
+import { lazy, Suspense, type ReactNode } from "react";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
+import SEO from "../components/seo/SEO";
 
-import TermsPage from "../pages/TermsPage";
-import PrivacyPage from "../pages/PrivacyPage";
-import WarrantyPage from "../pages/WarrantyPage";
-import StoreLocatorPage from "../pages/StoreLocatorPage";
+const TermsPage = lazy(() => import("../pages/TermsPage"));
+const PrivacyPage = lazy(() => import("../pages/PrivacyPage"));
+const WarrantyPage = lazy(() => import("../pages/WarrantyPage"));
+const StoreLocatorPage = lazy(() => import("../pages/StoreLocatorPage"));
+const AboutPage = lazy(() => import("../pages/AboutPage"));
+const ContactPage = lazy(() => import("../pages/ContactPage"));
+const ServicesIndexPage = lazy(() => import("../pages/ServicesIndexPage"));
+const ServiceLandingPage = lazy(() => import("../pages/ServiceLandingPage"));
+const BlogIndexPage = lazy(() => import("../pages/BlogIndexPage"));
+const BlogArticlePage = lazy(() => import("../pages/BlogArticlePage"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
+const LoginPage = lazy(() => import("../pages/admin/LoginPage"));
+const DashboardPage = lazy(() => import("../pages/admin/DashboardPage"));
 
-import LoginPage from "../pages/admin/LoginPage";
+function SuspendedPage({ children }: { children: ReactNode }) {
+  return (
+    <Suspense
+      fallback={
+        <div role="status" className="flex min-h-[50vh] items-center justify-center px-5 text-[#5a4045]">
+          Loading page…
+        </div>
+      }
+    >
+      {children}
+    </Suspense>
+  );
+}
 
-import Header from "../components/layout/Header";
-import AnnouncementBar from "../components/layout/AnnouncementBar";
-import TestPage from "../pages/admin/TestPage";
-import DashboardPage from "../pages/admin/DashboardPage";
+function AdminSEO({ path, title }: { path: string; title: string }) {
+  return <SEO title={title} description="AZAN Mobile Fix administration." path={path} noIndex />;
+}
 
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* Website */}
-
-      <Route
-        path="/"
-        element={
-          <>
-            <AnnouncementBar />
-            <Header />
-
-            <main className="pt-[120px]">
-              <HomePage />
-            </main>
-          </>
-        }
-      />
-
-      <Route
-        path="/terms"
-        element={<TermsPage />}
-      />
-
-      <Route
-        path="/privacy"
-        element={<PrivacyPage />}
-      />
-
-      <Route
-        path="/warranty"
-        element={<WarrantyPage />}
-      />
-
-      <Route
-        path="/locations"
-        element={<StoreLocatorPage />}
-      />
-
-      {/* Admin */}
+      <Route path="/" element={<HomePage />} />
+      <Route path="/terms" element={<SuspendedPage><TermsPage /></SuspendedPage>} />
+      <Route path="/privacy" element={<SuspendedPage><PrivacyPage /></SuspendedPage>} />
+      <Route path="/warranty" element={<SuspendedPage><WarrantyPage /></SuspendedPage>} />
+      <Route path="/locations" element={<SuspendedPage><StoreLocatorPage /></SuspendedPage>} />
+      <Route path="/about" element={<SuspendedPage><AboutPage /></SuspendedPage>} />
+      <Route path="/contact" element={<SuspendedPage><ContactPage /></SuspendedPage>} />
+      <Route path="/services" element={<SuspendedPage><ServicesIndexPage /></SuspendedPage>} />
+      <Route path="/services/:slug" element={<SuspendedPage><ServiceLandingPage /></SuspendedPage>} />
+      <Route path="/blog" element={<SuspendedPage><BlogIndexPage /></SuspendedPage>} />
+      <Route path="/blog/:slug" element={<SuspendedPage><BlogArticlePage /></SuspendedPage>} />
 
       <Route
         path="/admin"
-        element={<LoginPage />}
+        element={<SuspendedPage><AdminSEO path="/admin" title="Admin Login" /><LoginPage /></SuspendedPage>}
       />
-
       <Route
         path="/admin/dashboard"
-        element={<DashboardPage />}
+        element={<SuspendedPage><AdminSEO path="/admin/dashboard" title="Admin Dashboard" /><DashboardPage /></SuspendedPage>}
       />
-      
-      <Route
-        path="/admin/test"
-        element={<TestPage />}
-      />
+      <Route path="*" element={<SuspendedPage><NotFoundPage /></SuspendedPage>} />
     </Routes>
   );
 }

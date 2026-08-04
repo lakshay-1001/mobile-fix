@@ -4,25 +4,27 @@
   Tablet,
   CheckCircle,
   ChevronRight,
-  AirVent,
+  MessageCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { getWhatsAppUrl, HAS_WHATSAPP } from "../../config/site";
 
 interface Props {
+  slug: string;
   title: string;
   description: string;
   icon: string;
   color: string;
   features: string[];
-  mobile?: string;
 }
 
 export default function ServiceCard({
+  slug,
   title,
   description,
   icon,
   color,
   features,
-  mobile
 }: Props) {
   const getIcon = () => {
     switch (icon) {
@@ -31,9 +33,6 @@ export default function ServiceCard({
 
       case "laptop":
         return <Laptop size={32} />;
-
-      case "ac":
-        return <AirVent size={32} />;
 
       default:
         return <Tablet size={32} />;
@@ -51,19 +50,12 @@ export default function ServiceCard({
     }
   };
 
-  const whatsappUrl = mobile
-    ? `https://wa.me/${mobile}?text=${encodeURIComponent(
-        `Hi AZAN Mobile Fix, I would like to get a quote for ${title}.`
-      )}`
-    : `https://wa.me/+91976054826?text=${encodeURIComponent(
-        `Hi AZAN Mobile Fix, I would like to get a quote for ${title}.`
-      )}`;
+  const whatsappUrl = getWhatsAppUrl(
+    `Hi AZAN Mobile Fix, I would like to get a quote for ${title} in Dubai.`
+  );
 
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <article
       className="
         block
         gradient-border
@@ -71,13 +63,12 @@ export default function ServiceCard({
         group
         overflow-hidden
         rounded-[20px]
-        cursor-pointer
         hover:-translate-y-1
         transition-all
         duration-300
       "
     >
-      <div className="glass-card rounded-[20px] p-8 relative overflow-hidden h-full">
+      <div className="glass-card rounded-[20px] p-6 sm:p-8 relative overflow-hidden h-full">
         <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#b7004f]/10 group-hover:bg-[#b7004f]/15 transition-colors" />
 
         <div
@@ -109,28 +100,24 @@ export default function ServiceCard({
           ))}
         </ul>
 
-        <div
-          className="
-          flex
-          items-center
-          gap-2
-
-          text-[#b7004f]
-
-          font-semibold
-
-          group-hover:gap-4
-
-          transition-all
-          duration-300
-
-          mt-2
-          "
-        >
-          Click to Connect
-          <ChevronRight size={18} />
+        <div className="mt-2 flex flex-wrap gap-3">
+          <Link
+            to={`/services/${slug}`}
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-[#b7004f] px-5 font-semibold text-white transition-colors hover:bg-[#950040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
+          >
+            Service details <ChevronRight size={18} aria-hidden="true" />
+          </Link>
+          <a
+            href={whatsappUrl}
+            target={HAS_WHATSAPP ? "_blank" : undefined}
+            rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
+            aria-label={HAS_WHATSAPP ? `Get a WhatsApp quote for ${title}` : `Send an inquiry about ${title}`}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#b7004f]/30 px-5 font-semibold text-[#b7004f] transition-colors hover:bg-pink-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
+          >
+            <MessageCircle size={17} aria-hidden="true" /> WhatsApp
+          </a>
         </div>
       </div>
-    </a>
+    </article>
   );
 }

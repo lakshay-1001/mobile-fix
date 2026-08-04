@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 
 import AnnouncementBar from "../../components/layout/AnnouncementBar";
 import Header from "../../components/layout/Header";
@@ -12,13 +13,32 @@ interface Props {
 export default function WebsiteLayout({
   children,
 }: Props) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    const animationFrame = window.requestAnimationFrame(() => {
+      document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [location.hash, location.pathname]);
+
   return (
     <>
+      <a
+        href="#main-content"
+        className="fixed left-4 top-2 z-[100] -translate-y-20 rounded-md bg-white px-4 py-2 font-semibold text-[#b7004f] shadow-lg transition-transform focus:translate-y-0"
+      >
+        Skip to main content
+      </a>
       <AnnouncementBar />
 
       <Header />
 
-      <main className="pt-[120px]">
+      <main id="main-content" className="pt-[100px] sm:pt-[112px]">
         {children}
       </main>
 

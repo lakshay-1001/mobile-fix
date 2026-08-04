@@ -21,7 +21,9 @@ export default function SectionHeading({
     >
       <h2
         className="
-        text-3xl
+        text-[30px]
+        leading-tight
+        sm:text-4xl
         md:text-5xl
         lg:text-6xl
         font-extrabold

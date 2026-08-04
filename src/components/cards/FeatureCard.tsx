@@ -1,4 +1,12 @@
-import * as Icons from "lucide-react";
+import {
+  Award,
+  BadgeCheck,
+  Headphones,
+  ShieldCheck,
+  Wallet,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 
 interface Props {
   title: string;
@@ -6,63 +14,25 @@ interface Props {
   icon: string;
 }
 
-export default function FeatureCard({
-  title,
-  description,
-  icon,
-}: Props) {
-  const LucideIcon =
-    Icons[
-      icon as keyof typeof Icons
-    ] as React.ElementType;
+const iconMap: Record<string, LucideIcon> = {
+  Award,
+  BadgeCheck,
+  Headphones,
+  ShieldCheck,
+  Wallet,
+  Zap,
+};
+
+export default function FeatureCard({ title, description, icon }: Props) {
+  const Icon = iconMap[icon] || ShieldCheck;
 
   return (
-    <div
-      className="
-      bg-white
-      rounded-2xl
-      p-6
-      shadow-sm
-      border
-      border-white
-      hover:shadow-lg
-      transition-all
-      duration-300
-    "
-    >
-      <div
-        className="
-        h-12
-        w-12
-        rounded-xl
-        bg-pink-100
-        text-[#b7004f]
-        flex
-        items-center
-        justify-center
-        mb-4
-      "
-      >
-        <LucideIcon size={22} />
+    <article className="rounded-2xl border border-white bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 text-[#b7004f]">
+        <Icon size={22} aria-hidden="true" />
       </div>
-
-      <h4
-        className="
-        font-bold
-        mb-2
-      "
-      >
-        {title}
-      </h4>
-
-      <p
-        className="
-        text-sm
-        text-gray-500
-      "
-      >
-        {description}
-      </p>
-    </div>
+      <h3 className="mb-2 font-bold">{title}</h3>
+      <p className="text-sm leading-6 text-gray-600">{description}</p>
+    </article>
   );
 }

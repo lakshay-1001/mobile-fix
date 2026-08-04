@@ -158,8 +158,8 @@ export default function LegalPageLayout({
             className="
             font-black
 
-            text-[42px]
-            leading-[48px]
+            text-[36px]
+            leading-[42px]
 
             sm:text-[56px]
             sm:leading-[62px]
@@ -215,7 +215,9 @@ export default function LegalPageLayout({
           className="
           relative
 
-          rounded-[40px]
+          rounded-[24px]
+          sm:rounded-[32px]
+          lg:rounded-[40px]
 
           bg-white/92
 
@@ -246,8 +248,10 @@ export default function LegalPageLayout({
 
           <div
             className="
-            px-6
+            px-5
             py-8
+
+            sm:px-6
 
             md:px-14
             md:py-14

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   LayoutDashboard,
   Smartphone,
@@ -33,12 +33,7 @@ export default function DashboardPage() {
       approved: 0,
     });
 
-  useEffect(() => {
-    checkSession();
-    loadStats();
-  }, []);
-
-  const checkSession =
+  const checkSession = useCallback(
     async () => {
       const {
         data: { session },
@@ -48,9 +43,9 @@ export default function DashboardPage() {
       if (!session) {
         navigate("/admin");
       }
-    };
+    }, [navigate]);
 
-  const loadStats =
+  const loadStats = useCallback(
     async () => {
       const [
         products,
@@ -98,7 +93,16 @@ export default function DashboardPage() {
         approved:
           approved.count || 0,
       });
-    };
+    }, []);
+
+  useEffect(() => {
+    void checkSession();
+    const statsTimer = window.setTimeout(() => {
+      void loadStats();
+    }, 0);
+
+    return () => window.clearTimeout(statsTimer);
+  }, [checkSession, loadStats]);
 
   const handleLogout =
     async () => {

@@ -4,7 +4,7 @@ import StatCard from "../cards/StatCard";
 
 export default function StatsSection() {
   return (
-    <section className="py-12 md:py-16">
+    <section aria-label="AZAN Mobile Fix service highlights" className="py-10 md:py-14">
       <Container>
         <div
           className="

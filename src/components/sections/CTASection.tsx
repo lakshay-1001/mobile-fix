@@ -1,9 +1,11 @@
 ﻿import Container from "../common/Container";
 import { motion } from "framer-motion";
+import { MessageCircle, Phone } from "lucide-react";
+import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
 
 export default function CTASection() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-24">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,8 +69,10 @@ export default function CTASection() {
                 className="
                 text-white
                 font-black
-                text-[42px]
-                leading-[46px]
+                text-[34px]
+                leading-[40px]
+                sm:text-[42px]
+                sm:leading-[46px]
                 md:text-[64px]
                 md:leading-[68px]
                 tracking-[-0.03em]
@@ -105,8 +109,8 @@ export default function CTASection() {
                 "
               >
                 Don't let a broken screen slow you down.
-                Join over 10,000 happy customers and get
-                your device repaired by Dubai's trusted experts.
+                Tell us about the fault and receive clear information about
+                availability, the quotation and the repair process.
               </p>
             </div>
 
@@ -122,9 +126,14 @@ export default function CTASection() {
               gap-4
               "
             >
-              <button
+              <a
+                href={getWhatsAppUrl()}
+                target={HAS_WHATSAPP ? "_blank" : undefined}
+                rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
                 className="
-                min-w-[220px]
+                w-full
+                sm:w-auto
+                sm:min-w-[220px]
 
                 h-[56px]
 
@@ -142,12 +151,16 @@ export default function CTASection() {
                 duration-300
                 "
               >
-                Book Your Repair
-              </button>
+                <MessageCircle className="mr-2 inline" size={19} aria-hidden="true" />
+                {HAS_WHATSAPP ? "Get a WhatsApp Quote" : "Send a Repair Inquiry"}
+              </a>
 
-              <button
+              <a
+                href={PHONE_LINK}
                 className="
-                min-w-[220px]
+                w-full
+                sm:w-auto
+                sm:min-w-[220px]
 
                 h-[56px]
 
@@ -166,8 +179,9 @@ export default function CTASection() {
                 duration-300
                 "
               >
-                Check Pricing
-              </button>
+                <Phone className="mr-2 inline" size={19} aria-hidden="true" />
+                {HAS_CONTACT_PHONE ? "Call for Pricing" : "Calling Unavailable"}
+              </a>
             </div>
           </div>
         </motion.div>
