@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
+﻿import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import HeroSection from "../components/sections/HeroSection";
 import StatsSection from "../components/sections/StatsSection";
 import ServicesSection from "../components/sections/ServicesSection";
@@ -61,7 +61,7 @@ export default function HomePage() {
     <WebsiteLayout>
       <SEO
         title="Mobile Phone Repair Dubai"
-        description="Mobile phone, iPhone, Samsung, tablet and laptop repair services across Dubai from AZAN Mobile Fix in Bur Dubai."
+        description="Mobile phone, iPhone, Samsung, tablet and laptop repair services across Dubai from Azan Mobile Fix in Bur Dubai."
         structuredData={homeSchema}
       />
       <HeroSection />

@@ -96,7 +96,7 @@ export default function ContactPage() {
     <WebsiteLayout>
       <SEO
         title="Contact Our Mobile Repair Shop in Bur Dubai"
-        description="Contact AZAN Mobile Fix or visit our mobile repair shop on 25C Street in Meena Bazaar, Bur Dubai."
+        description="Contact Azan Mobile Fix or visit our mobile repair shop on 25C Street in Meena Bazaar, Bur Dubai."
         path="/contact"
       />
 

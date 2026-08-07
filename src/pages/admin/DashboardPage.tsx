@@ -147,7 +147,7 @@ export default function DashboardPage() {
           text-[#b7004f]
           "
         >
-          AZAN Admin
+          Azan Admin
         </h1>
 
         <button
@@ -227,7 +227,7 @@ export default function DashboardPage() {
         >
           <div>
             <h1 className="text-2xl font-black text-[#b7004f]">
-              AZAN Admin
+              Azan Admin
             </h1>
 
             <p className="text-gray-500 text-sm mt-1">

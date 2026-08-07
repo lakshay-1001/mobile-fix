@@ -16,7 +16,7 @@ const blogSchema = [
     "@context": "https://schema.org",
     "@type": "Blog",
     name: `${SITE_NAME} Repair Guides`,
-    description: "Practical phone and device care guidance from AZAN Mobile Fix in Dubai.",
+    description: "Practical phone and device care guidance from Azan Mobile Fix in Dubai.",
     url: getSiteUrl("/blog"),
     blogPost: repairGuides.map((guide) => ({
       "@type": "BlogPosting",

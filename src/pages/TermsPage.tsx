@@ -18,7 +18,7 @@ export default function TermsPage() {
     <WebsiteLayout>
       <SEO
         title="Terms of Service"
-        description="Review the repair service terms, estimates, payment conditions and customer responsibilities for AZAN Mobile Fix in Dubai."
+        description="Review the repair service terms, estimates, payment conditions and customer responsibilities for Azan Mobile Fix in Dubai."
         path="/terms"
       />
       <LegalPageLayout title="Terms of Service">
@@ -88,7 +88,7 @@ export default function TermsPage() {
             max-w-3xl
             "
           >
-            AZAN Mobile Fix, operated by {LEGAL_BUSINESS_NAME}, is committed to
+            Azan Mobile Fix, operated by {LEGAL_BUSINESS_NAME}, is committed to
             providing transparent pricing,
             professional repair services,
             clear information about replacement parts,
@@ -104,7 +104,7 @@ export default function TermsPage() {
             icon={<Wrench size={22} />}
           >
             <p>
-              AZAN Mobile Fix provides repair
+              Azan Mobile Fix provides repair
               services for smartphones,
               tablets, laptops, MacBooks,
               gaming devices and accessories.
@@ -254,7 +254,7 @@ export default function TermsPage() {
           </p>
 
           <a
-            href={getWhatsAppUrl("Hi AZAN Mobile Fix, I need help with your Terms of Service.")}
+            href={getWhatsAppUrl("Hi Azan Mobile Fix, I need help with your Terms of Service.")}
             target={HAS_WHATSAPP ? "_blank" : undefined}
             rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
             className="

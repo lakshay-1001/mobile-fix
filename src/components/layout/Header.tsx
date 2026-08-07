@@ -40,7 +40,7 @@ export default function Header() {
           <Link
             to="/"
             onClick={() => setOpen(false)}
-            aria-label="AZAN Mobile Fix home"
+            aria-label="Azan Mobile Fix home"
             className="group flex shrink-0 items-center gap-2 whitespace-nowrap transition-transform hover:scale-[1.02] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b7004f]"
           >
             <img
@@ -55,7 +55,7 @@ export default function Header() {
                 className="flex items-baseline text-[21px] font-[900] leading-none tracking-[-0.045em] sm:text-[27px] lg:text-[24px] xl:text-[28px]"
                 style={{ fontWeight: 900 }}
               >
-                <span className="text-[#b7004f]">AZAN</span>
+                <span className="text-[#b7004f]">Azan</span>
                 <span className="ml-1.5 text-[#2b1c24] transition-colors group-hover:text-[#b7004f]">
                   Mobile Fix
                 </span>
@@ -81,7 +81,7 @@ export default function Header() {
           <div className="hidden shrink-0 items-center gap-2 xl:flex">
             <a
               href={PHONE_LINK}
-              aria-label={HAS_CONTACT_PHONE ? "Call AZAN Mobile Fix" : "Calling is temporarily unavailable"}
+              aria-label={HAS_CONTACT_PHONE ? "Call Azan Mobile Fix" : "Calling is temporarily unavailable"}
               className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#5a4045] transition-colors hover:bg-pink-50 hover:text-[#b7004f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
             >
               <Phone size={19} aria-hidden="true" />

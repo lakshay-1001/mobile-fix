@@ -35,7 +35,7 @@ export default function ServicesIndexPage() {
     <WebsiteLayout>
       <SEO
         title="Phone, Tablet and Laptop Repair Dubai"
-        description="Explore iPhone, Samsung, mobile phone, iPad, tablet, MacBook and laptop repair services from AZAN Mobile Fix in Bur Dubai."
+        description="Explore iPhone, Samsung, mobile phone, iPad, tablet, MacBook and laptop repair services from Azan Mobile Fix in Bur Dubai."
         path="/services"
         structuredData={servicesIndexSchema}
       />

@@ -34,7 +34,7 @@ export default function ServiceLandingPage() {
     },
   ];
 
-  const whatsappUrl = getWhatsAppUrl(`Hi AZAN Mobile Fix, I would like a quote for ${service.name}.`);
+  const whatsappUrl = getWhatsAppUrl(`Hi Azan Mobile Fix, I would like a quote for ${service.name}.`);
 
   return (
     <WebsiteLayout>

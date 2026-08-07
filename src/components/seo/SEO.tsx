@@ -34,7 +34,7 @@ export default function SEO({
   noIndex = false,
   type = "website",
   image = "/og-image.png",
-  imageAlt = "AZAN Mobile Fix mobile repair services in Dubai",
+  imageAlt = "Azan Mobile Fix mobile repair services in Dubai",
   publishedTime,
   modifiedTime,
   structuredData,

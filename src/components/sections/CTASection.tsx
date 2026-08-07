@@ -131,6 +131,9 @@ export default function CTASection() {
                 target={HAS_WHATSAPP ? "_blank" : undefined}
                 rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
                 className="
+                inline-flex
+                items-center
+                justify-center
                 w-full
                 sm:w-auto
                 sm:min-w-[220px]
@@ -146,7 +149,7 @@ export default function CTASection() {
 
                 shadow-xl
 
-                hover:scale-[1.03]
+                hover:scale-[1.09]
                 transition-all
                 duration-300
                 "
@@ -158,6 +161,9 @@ export default function CTASection() {
               <a
                 href={PHONE_LINK}
                 className="
+                inline-flex
+                items-center
+                justify-center
                 w-full
                 sm:w-auto
                 sm:min-w-[220px]
@@ -174,7 +180,7 @@ export default function CTASection() {
 
                 hover:bg-white
                 hover:text-[#b7004f]
-
+                hover:scale-[1.09]
                 transition-all
                 duration-300
                 "

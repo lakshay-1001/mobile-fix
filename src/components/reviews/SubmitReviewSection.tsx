@@ -472,7 +472,7 @@ export default function SubmitReviewSection() {
                 className="mt-1 h-5 w-5 shrink-0 accent-[#b7004f]"
               />
               <span>
-                I authorise AZAN Mobile Fix to publish my displayed name, rating and review after moderation. I understand that I can request removal through the <Link to="/contact" className="font-semibold text-[#b7004f] hover:underline">contact page</Link>. Please do not include passwords, payment information or sensitive device data. Read the <Link to="/privacy" className="font-semibold text-[#b7004f] hover:underline">Privacy Policy</Link>.
+                I authorise Azan Mobile Fix to publish my displayed name, rating and review after moderation. I understand that I can request removal through the <Link to="/contact" className="font-semibold text-[#b7004f] hover:underline">contact page</Link>. Please do not include passwords, payment information or sensitive device data. Read the <Link to="/privacy" className="font-semibold text-[#b7004f] hover:underline">Privacy Policy</Link>.
               </span>
             </label>
           </div>

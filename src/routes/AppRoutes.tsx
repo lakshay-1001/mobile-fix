@@ -32,7 +32,7 @@ function SuspendedPage({ children }: { children: ReactNode }) {
 }
 
 function AdminSEO({ path, title }: { path: string; title: string }) {
-  return <SEO title={title} description="AZAN Mobile Fix administration." path={path} noIndex />;
+  return <SEO title={title} description="Azan Mobile Fix administration." path={path} noIndex />;
 }
 
 export default function AppRoutes() {

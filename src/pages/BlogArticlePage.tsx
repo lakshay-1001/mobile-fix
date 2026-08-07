@@ -41,7 +41,7 @@ export default function BlogArticlePage() {
         type="article"
         publishedTime={guide.published}
         modifiedTime={guide.modified}
-        imageAlt={`${guide.title} – repair guide from AZAN Mobile Fix`}
+        imageAlt={`${guide.title} – repair guide from Azan Mobile Fix`}
         structuredData={schema}
       />
 
@@ -53,7 +53,7 @@ export default function BlogArticlePage() {
             <h1 className="mt-3 text-4xl font-black leading-tight tracking-[-0.035em] text-[#171217] sm:text-5xl">{guide.title}</h1>
             <p className="mt-5 text-xl leading-8 text-[#5a4045]">{guide.excerpt}</p>
             <div className="mt-6 flex flex-wrap gap-4 border-y border-[#eadde5] py-4 text-sm font-semibold text-[#6f5963]">
-              <span>By AZAN Mobile Fix Repair Team</span>
+              <span>By Azan Mobile Fix Repair Team</span>
               <span className="inline-flex items-center gap-1.5"><CalendarDays size={15} aria-hidden="true" /> Updated <time dateTime={guide.modified}>{formatDate(guide.modified)}</time></span>
               <span className="inline-flex items-center gap-1.5"><Clock3 size={15} aria-hidden="true" /> {guide.readTime}</span>
             </div>

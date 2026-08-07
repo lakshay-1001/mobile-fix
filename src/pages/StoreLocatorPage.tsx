@@ -18,7 +18,7 @@ export default function StoreLocatorPage() {
     <WebsiteLayout>
       <SEO
         title="Mobile Repair Shop in Meena Bazaar, Bur Dubai"
-        description="Visit the single AZAN Mobile Fix shop on 25C Street in Meena Bazaar, Bur Dubai. View the address, nearby landmarks and opening hours."
+        description="Visit the single Azan Mobile Fix shop on 25C Street in Meena Bazaar, Bur Dubai. View the address, nearby landmarks and opening hours."
         path="/locations"
         structuredData={[
           localBusinessSchema,

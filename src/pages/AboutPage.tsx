@@ -14,12 +14,12 @@ export default function AboutPage() {
     <WebsiteLayout>
       <SEO
         title="About Our Mobile Repair Shop in Bur Dubai"
-        description="Learn about AZAN Mobile Fix, our single Meena Bazaar shop and our mobile device repair services in Dubai."
+        description="Learn about Azan Mobile Fix, our single Meena Bazaar shop and our mobile device repair services in Dubai."
         path="/about"
       />
       <div className="bg-[#fffafd] px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[1050px]">
-          <img src={BRAND_MARK_LARGE} alt="AZAN Mobile Fix logo" width="512" height="512" className="mb-6 h-20 w-20 rounded-[22px] object-cover shadow-lg" />
+          <img src={BRAND_MARK_LARGE} alt="Azan Mobile Fix logo" width="512" height="512" className="mb-6 h-20 w-20 rounded-[22px] object-cover shadow-lg" />
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7004f]">About us</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.035em] text-[#171217] sm:text-5xl">
             Local device assistance from our Bur Dubai shop

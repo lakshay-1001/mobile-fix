@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <WebsiteLayout>
       <SEO
         title="Privacy Policy"
-        description="Learn what information AZAN Mobile Fix collects through inquiries, reviews and repair services, and how to make a privacy request."
+        description="Learn what information Azan Mobile Fix collects through inquiries, reviews and repair services, and how to make a privacy request."
         path="/privacy"
       />
       <LegalPageLayout title="Privacy Policy">

@@ -18,14 +18,14 @@ export default function WarrantyPage() {
     <WebsiteLayout>
       <SEO
         title="Mobile Repair Warranty Dubai"
-        description="Read the AZAN Mobile Fix warranty periods, exclusions and claim process for screen, battery, charging port and motherboard repairs in Dubai."
+        description="Read the Azan Mobile Fix warranty periods, exclusions and claim process for screen, battery, charging port and motherboard repairs in Dubai."
         path="/warranty"
       />
       <LegalPageLayout title="Warranty Policy">
 
         <div className="mb-8 rounded-2xl border border-[#eadde5] bg-white p-5 text-[#5a4045]">
           <p className="font-semibold text-[#171217]">Last updated: 3 August 2026</p>
-          <p className="mt-2">AZAN Mobile Fix is operated by {LEGAL_BUSINESS_NAME}. The applicable warranty period, installed parts and coverage must be recorded on the repair invoice or warranty document.</p>
+          <p className="mt-2">Azan Mobile Fix is operated by {LEGAL_BUSINESS_NAME}. The applicable warranty period, installed parts and coverage must be recorded on the repair invoice or warranty document.</p>
           <p className="mt-2">This commercial warranty is provided in addition to, and does not replace or reduce, mandatory rights available under UAE consumer protection law.</p>
         </div>
 

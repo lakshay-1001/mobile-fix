@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <Link to="/" className="inline-flex items-center gap-3 text-2xl font-black hover:text-pink-200">
               <img src={BRAND_MARK_SMALL} alt="" width="64" height="64" className="h-14 w-14 rounded-2xl object-cover" />
-              <span>AZAN Mobile Fix</span>
+              <span>Azan Mobile Fix</span>
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-7 text-white/75 md:text-base">
               Same-day phone, tablet and laptop repairs at homes and offices across Dubai.
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/15 pt-6 text-center text-sm text-white/60 md:text-left">
-          © {new Date().getFullYear()} AZAN Mobile Fix. All rights reserved.
+          © {new Date().getFullYear()} Azan Mobile Fix. All rights reserved.
         </div>
       </div>
     </footer>

@@ -35,7 +35,7 @@ export const repairServicePages: RepairServicePage[] = [
     name: "iPhone Repair",
     title: "iPhone Repair in Dubai",
     description:
-      "iPhone screen, battery, charging and fault diagnosis in Dubai. Visit AZAN Mobile Fix in Bur Dubai or ask about a doorstep appointment.",
+      "iPhone screen, battery, charging and fault diagnosis in Dubai. Visit Azan Mobile Fix in Bur Dubai or ask about a doorstep appointment.",
     summary: "Screen, battery, charging and diagnostic support for a wide range of iPhone models.",
     intro:
       "A cracked display, weak battery or unreliable charging port can quickly interrupt work and daily communication. Our Bur Dubai team assesses the device first, explains the available repair option and confirms the quotation before work begins.",
@@ -91,7 +91,7 @@ export const repairServicePages: RepairServicePage[] = [
     name: "Mobile Phone Repair",
     title: "Mobile Phone Repair Shop in Bur Dubai",
     description:
-      "Looking for a mobile repair shop near you in Bur Dubai? Visit AZAN Mobile Fix in Meena Bazaar for phone diagnostics and repair inquiries.",
+      "Looking for a mobile repair shop near you in Bur Dubai? Visit Azan Mobile Fix in Meena Bazaar for phone diagnostics and repair inquiries.",
     summary: "A local Meena Bazaar repair shop for iPhone, Samsung and other smartphone repair inquiries.",
     intro:
       "If you are searching for a mobile repair shop near you in Bur Dubai, our single shop is on 25C Street in Meena Bazaar, close to Astoria Hotel. We assess common smartphone faults and explain parts, timing and warranty terms before repair work begins.",
@@ -108,7 +108,7 @@ export const repairServicePages: RepairServicePage[] = [
       { title: "Repair and testing", description: "Approved work is completed and the relevant device functions are checked." },
     ],
     faqs: [
-      { question: "Where is your mobile repair shop in Bur Dubai?", answer: "AZAN Mobile Fix is on 25C Street in Meena Bazaar, Bur Dubai, near Astoria Hotel and Mini Panjab Restaurant." },
+      { question: "Where is your mobile repair shop in Bur Dubai?", answer: "Azan Mobile Fix is on 25C Street in Meena Bazaar, Bur Dubai, near Astoria Hotel and Mini Panjab Restaurant." },
       { question: "Do I need an appointment?", answer: "You may visit during opening hours, but messaging first helps us check technician and parts availability for your model." },
       { question: "Do you have other Dubai branches?", answer: "No. We currently operate one customer-facing shop in Meena Bazaar, Bur Dubai." },
     ],
@@ -119,7 +119,7 @@ export const repairServicePages: RepairServicePage[] = [
     name: "iPad & Tablet Repair",
     title: "iPad and Tablet Repair in Dubai",
     description:
-      "iPad and Android tablet screen, charging and battery repair inquiries in Dubai. Ask AZAN Mobile Fix about assessment and availability.",
+      "iPad and Android tablet screen, charging and battery repair inquiries in Dubai. Ask Azan Mobile Fix about assessment and availability.",
     summary: "Screen, charging, battery and fault assessment for iPads and Android tablets.",
     intro:
       "Tablet construction and parts differ significantly between models. We confirm the exact model, inspect the fault and explain whether the device can be serviced before asking you to approve any work.",

@@ -151,7 +151,7 @@ export default function LegalPageLayout({
             mb-6
             "
           >
-            AZAN Mobile Fix
+            Azan Mobile Fix
           </div>
 
           <h1

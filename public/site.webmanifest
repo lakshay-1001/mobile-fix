@@ -1,6 +1,6 @@
 {
-  "name": "AZAN Mobile Fix",
-  "short_name": "AZAN Fix",
+  "name": "Azan Mobile Fix",
+  "short_name": "Azan Fix",
   "description": "Same-day mobile and laptop repair services across Dubai.",
   "start_url": "/",
   "display": "standalone",

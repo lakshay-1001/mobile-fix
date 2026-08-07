@@ -51,7 +51,7 @@ export default function ServiceCard({
   };
 
   const whatsappUrl = getWhatsAppUrl(
-    `Hi AZAN Mobile Fix, I would like to get a quote for ${title} in Dubai.`
+    `Hi Azan Mobile Fix, I would like to get a quote for ${title} in Dubai.`
   );
 
   return (
