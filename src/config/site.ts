@@ -1,6 +1,6 @@
 export const SITE_NAME = "Azan Mobile Fix";
-export const BRAND_MARK_SMALL = "/brand/azan-mark-64.png";
-export const BRAND_MARK_LARGE = "/brand/icon-512.png";
+export const BRAND_MARK_SMALL = "/azan-mark-64.png";
+export const BRAND_MARK_LARGE = "/icon-512.png";
 export const LEGAL_BUSINESS_NAME = "NAJMA AL WAHDA ELECTRONICS TRADING L.L.C";
 export const SHOP_ADDRESS = "25C Street, Meena Bazaar, Bur Dubai, Dubai, United Arab Emirates";
 export const SHOP_DIRECTIONS = [
