@@ -24,7 +24,7 @@ export const HAS_CONTACT_PHONE = /^\+[1-9]\d{7,14}$/.test(configuredContactPhone
 export const CONTACT_PHONE_E164 = HAS_CONTACT_PHONE ? configuredContactPhone : "";
 export const PHONE_DISPLAY = HAS_PUBLIC_PHONE
   ? configuredPhoneDisplay || configuredPhone
-  : "XXXXXX";
+  : "+971 56 786 9010";
 export const PHONE_LINK = HAS_CONTACT_PHONE ? `tel:${CONTACT_PHONE_E164}` : "tel:";
 export const HAS_WHATSAPP = HAS_CONTACT_PHONE;
 

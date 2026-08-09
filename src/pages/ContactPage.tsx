@@ -147,7 +147,7 @@ export default function ContactPage() {
                 <div className="min-w-0">
                   <h2 className="font-bold">Public phone</h2>
                   <p className="mt-1 text-white/80">{PHONE_DISPLAY}</p>
-                  <p className="mt-1 text-xs leading-5 text-white/60">The public call and WhatsApp number will be added after confirmation.</p>
+                  {/* <p className="mt-1 text-xs leading-5 text-white/60">The public call and WhatsApp number will be added after confirmation.</p> */}
                 </div>
               </div>
             </aside>
