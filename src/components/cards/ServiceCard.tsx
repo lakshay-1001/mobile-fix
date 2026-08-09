@@ -8,6 +8,7 @@
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getWhatsAppUrl, HAS_WHATSAPP } from "../../config/site";
+import { trackEvent } from "../../config/analytics";
 
 interface Props {
   slug: string;
@@ -108,6 +109,11 @@ export default function ServiceCard({
             Service details <ChevronRight size={18} aria-hidden="true" />
           </Link>
           <a
+            onClick={() =>
+              trackEvent("whatsapp_click", {
+                location: "service_card",
+              })
+            }
             href={whatsappUrl}
             target={HAS_WHATSAPP ? "_blank" : undefined}
             rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}

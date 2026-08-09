@@ -12,6 +12,7 @@ import {
   SHOP_DIRECTIONS,
   SITE_NAME,
 } from "../config/site";
+import { trackEvent } from "../config/analytics";
 
 export default function StoreLocatorPage() {
   return (
@@ -71,7 +72,13 @@ export default function StoreLocatorPage() {
           </section>
 
           <div className="text-center">
-            <a href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#b7004f] px-7 font-semibold text-white hover:bg-[#950040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
+            <a 
+              onClick={() =>
+                trackEvent("whatsapp_click", {
+                  location: "store_locator_page",
+                })
+              }
+              href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#b7004f] px-7 font-semibold text-white hover:bg-[#950040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
               <MessageCircle size={18} aria-hidden="true" /> Chat with the shop on WhatsApp
             </a>
           </div>

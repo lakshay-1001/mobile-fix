@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Phone } from "lucide-react";
 import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
+import { trackEvent } from "../../config/analytics";
 
 export default function CTASection() {
   return (
@@ -127,6 +128,11 @@ export default function CTASection() {
               "
             >
               <a
+                onClick={() =>
+                  trackEvent("whatsapp_click", {
+                    location: "CTA_section",
+                  })
+                }
                 href={getWhatsAppUrl()}
                 target={HAS_WHATSAPP ? "_blank" : undefined}
                 rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
@@ -159,6 +165,11 @@ export default function CTASection() {
               </a>
 
               <a
+                onClick={() =>
+                  trackEvent("phone_click", {
+                    location: "CTA_section",
+                  })
+                }
                 href={PHONE_LINK}
                 className="
                 inline-flex

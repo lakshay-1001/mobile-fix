@@ -7,6 +7,7 @@ import { createBreadcrumbSchema, createServiceSchema, localBusinessSchema } from
 import { getWhatsAppUrl, HAS_WHATSAPP, OPENING_HOURS_DISPLAY, SHOP_ADDRESS } from "../config/site";
 import { getRepairGuide, getRepairService } from "../data/seoContent";
 import NotFoundPage from "./NotFoundPage";
+import { trackEvent } from "../config/analytics";
 
 export default function ServiceLandingPage() {
   const { slug } = useParams();
@@ -49,7 +50,13 @@ export default function ServiceLandingPage() {
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7004f]">Local repair service</p>
               <h1 className="mt-3 text-4xl font-black tracking-[-0.035em] text-[#171217] sm:text-5xl">{service.title}</h1>
               <p className="mt-5 text-lg leading-8 text-[#5a4045]">{service.intro}</p>
-              <a href={whatsappUrl} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b7004f] px-7 font-bold text-white hover:bg-[#950040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
+              <a 
+                onClick={() =>
+                  trackEvent("whatsapp_click", {
+                    location: "service_landing_page",
+                  })
+                }
+                href={whatsappUrl} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#b7004f] px-7 font-bold text-white hover:bg-[#950040] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
                 <MessageCircle size={18} aria-hidden="true" /> Ask about this repair
               </a>
             </div>

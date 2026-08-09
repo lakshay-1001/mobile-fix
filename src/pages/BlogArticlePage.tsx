@@ -7,6 +7,7 @@ import { createArticleSchema, createBreadcrumbSchema } from "../components/seo/s
 import { getWhatsAppUrl, HAS_WHATSAPP } from "../config/site";
 import { getRepairGuide, getRepairService } from "../data/seoContent";
 import NotFoundPage from "./NotFoundPage";
+import { trackEvent } from "../config/analytics";
 
 function formatDate(date: string) {
   return new Date(`${date}T00:00:00`).toLocaleDateString("en-AE", {
@@ -74,7 +75,13 @@ export default function BlogArticlePage() {
           <aside className="mt-12 rounded-[26px] bg-gradient-to-r from-[#b7004f] to-[#8138b2] p-7 text-white sm:p-9" aria-label="Repair inquiry">
             <h2 className="text-2xl font-black">Need help with your device?</h2>
             <p className="mt-3 max-w-2xl leading-7 text-white/85">Send the model and symptoms for initial guidance. A final repair quotation may require physical inspection.</p>
-            <a href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 font-bold text-[#b7004f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"><MessageCircle size={18} aria-hidden="true" /> Message on WhatsApp</a>
+            <a 
+            onClick={() =>
+              trackEvent("whatsapp_click", {
+                location: "blog_article_page",
+              })
+            }
+            href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 font-bold text-[#b7004f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"><MessageCircle size={18} aria-hidden="true" /> Message on WhatsApp</a>
           </aside>
 
           <section className="mt-12" aria-labelledby="related-services-heading">

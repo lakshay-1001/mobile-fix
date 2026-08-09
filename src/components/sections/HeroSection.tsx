@@ -3,6 +3,7 @@ import { MessageCircle, Phone } from "lucide-react";
 import GradientText from "../common/GradientText";
 import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
 import heroImage from "../../assets/images/hero.png";
+import { trackEvent } from "../../config/analytics";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -63,10 +64,22 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <a href={PHONE_LINK} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#b7004f] to-[#8138b2] px-8 font-semibold text-white shadow-lg shadow-[#b7004f]/25 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
+            <a 
+            onClick={() =>
+              trackEvent("phone_click", {
+                location: "hero_section",
+              })
+            }
+            href={PHONE_LINK} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#b7004f] to-[#8138b2] px-8 font-semibold text-white shadow-lg shadow-[#b7004f]/25 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
               <Phone size={20} aria-hidden="true" /> {HAS_CONTACT_PHONE ? "Call Now" : "Call Unavailable"}
             </a>
-            <a href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border border-[#b7004f]/30 bg-white/90 px-8 font-semibold text-[#4a3540] shadow-lg shadow-black/5 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
+            <a 
+              onClick={() =>
+                trackEvent("whatsapp_click", {
+                  location: "hero_section",
+                })
+              }
+              href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border border-[#b7004f]/30 bg-white/90 px-8 font-semibold text-[#4a3540] shadow-lg shadow-black/5 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
               <MessageCircle size={20} aria-hidden="true" /> {HAS_WHATSAPP ? "WhatsApp Us" : "Send Inquiry"}
             </a>
           </motion.div>

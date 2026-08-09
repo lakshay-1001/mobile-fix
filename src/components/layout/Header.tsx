@@ -9,6 +9,7 @@ import {
   HAS_WHATSAPP,
   PHONE_LINK,
 } from "../../config/site";
+import { trackEvent } from "../../config/analytics";
 
 const navItems = [
   { label: "Services", href: "/services" },
@@ -80,6 +81,11 @@ export default function Header() {
 
           <div className="hidden shrink-0 items-center gap-2 xl:flex">
             <a
+              onClick={() =>
+                trackEvent("phone_click", {
+                  location: "header",
+                })
+              }
               href={PHONE_LINK}
               aria-label={HAS_CONTACT_PHONE ? "Call Azan Mobile Fix" : "Calling is temporarily unavailable"}
               className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full text-[#5a4045] transition-colors hover:bg-pink-50 hover:text-[#b7004f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]"
@@ -87,6 +93,11 @@ export default function Header() {
               <Phone size={19} aria-hidden="true" />
             </a>
             <a
+            onClick={() =>
+              trackEvent("whatsapp_click", {
+                location: "header",
+              })
+            }
               href={whatsappUrl}
               target={HAS_WHATSAPP ? "_blank" : undefined}
               rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
@@ -133,10 +144,21 @@ export default function Header() {
                 </Link>
               ))}
               <div className="mt-1 grid grid-cols-1 gap-2 border-t border-gray-100 p-2 sm:grid-cols-2">
-                <a href={PHONE_LINK} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#b7004f] font-semibold text-[#b7004f]">
+                <a onClick={() =>
+                  trackEvent("phone_click", {
+                    location: "header1",
+                  })
+                }
+                href={PHONE_LINK} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#b7004f] font-semibold text-[#b7004f]">
                   <Phone size={17} aria-hidden="true" /> {HAS_CONTACT_PHONE ? "Call now" : "Call unavailable"}
                 </a>
-                <a href={whatsappUrl} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#b7004f] to-[#8138b2] font-semibold text-white">
+                <a 
+                  onClick={() =>
+                    trackEvent("whatsapp_click", {
+                      location: "header1",
+                    })
+                  }
+                  href={whatsappUrl} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#b7004f] to-[#8138b2] font-semibold text-white">
                   <MessageCircle size={17} aria-hidden="true" /> {HAS_WHATSAPP ? "WhatsApp" : "Send inquiry"}
                 </a>
               </div>

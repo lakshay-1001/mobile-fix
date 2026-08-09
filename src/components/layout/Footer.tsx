@@ -12,6 +12,7 @@ import {
   PHONE_LINK,
   SHOP_ADDRESS,
 } from "../../config/site";
+import { trackEvent } from "../../config/analytics";
 
 const instagramUrl = "https://www.instagram.com/azanmobilefix/";
 const facebookUrl = "https://www.facebook.com/share/1bcuzBTBoq/?mibextid=wwXIfr";
@@ -213,6 +214,11 @@ export default function Footer() {
             <div className="flex flex-col items-center gap-3 text-sm text-white/75 md:items-start">
               {HAS_CONTACT_PHONE ? (
                 <a
+                  onClick={() =>
+                    trackEvent("phone_click", {
+                      location: "footer",
+                    })
+                  }
                   href={PHONE_LINK}
                   className="inline-flex min-h-10 items-center gap-3 transition hover:text-pink-200"
                 >

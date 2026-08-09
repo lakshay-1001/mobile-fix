@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import SEO from "../components/seo/SEO";
 import { getWhatsAppUrl, HAS_WHATSAPP, LEGAL_BUSINESS_NAME } from "../config/site";
+import { trackEvent } from "../config/analytics";
 
 export default function TermsPage() {
   return (
@@ -254,6 +255,11 @@ export default function TermsPage() {
           </p>
 
           <a
+            onClick={() =>
+              trackEvent("whatsapp_click", {
+                location: "terms_page",
+              })
+            }
             href={getWhatsAppUrl("Hi Azan Mobile Fix, I need help with your Terms of Service.")}
             target={HAS_WHATSAPP ? "_blank" : undefined}
             rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
