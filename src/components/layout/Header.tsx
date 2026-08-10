@@ -49,7 +49,7 @@ export default function Header() {
               alt=""
               width="64"
               height="64"
-              className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-sm sm:h-11 sm:w-11"
+              className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
             />
             <span>
               <span

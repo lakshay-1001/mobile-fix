@@ -8,7 +8,7 @@ export const trackEvent = (
   eventName: string,
   params: Record<string, any> = {}
 ) => {
-  if (typeof window === "undefined") return;
+//   console.log("TRACK EVENT:", eventName, params);
 
   window.dataLayer = window.dataLayer || [];
 
@@ -16,4 +16,6 @@ export const trackEvent = (
     event: eventName,
     ...params,
   });
+
+//   console.log(window.dataLayer);
 };

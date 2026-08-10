@@ -58,7 +58,10 @@ export default function HeroSection() {
             <GradientText className="block">At Your Door</GradientText>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="max-w-[570px] text-[16px] font-medium leading-7 text-[#4f3b44] sm:text-lg sm:leading-8">
+          <motion.p
+            variants={itemVariants}
+            className="max-w-[570px] text-[16px] font-medium leading-7 text-white lg:text-[#4f3b44] sm:text-lg sm:leading-8"
+          >
             Get convenient smartphone, tablet and laptop repairs at your home or office.
             From cracked screens to battery problems, our technicians serve customers across Dubai.
           </motion.p>

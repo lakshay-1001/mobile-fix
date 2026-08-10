@@ -5,6 +5,7 @@ import AnnouncementBar from "../../components/layout/AnnouncementBar";
 import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 // import MobileBottomNav from "../../components/layout/MobileBottomNav";
+import FloatingWhatsAppButton from "../../components/common/FloatingWhatsAppButton";
 
 interface Props {
   children: ReactNode;
@@ -43,7 +44,7 @@ export default function WebsiteLayout({
       </main>
 
       <Footer />
-
+      <FloatingWhatsAppButton />
       {/* <MobileBottomNav /> */}
     </>
   );

@@ -1,5 +1,6 @@
 import { Clock3, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl, HAS_WHATSAPP, OPENING_HOURS_SHORT } from "../../config/site";
+import { trackEvent } from "../../config/analytics";
 
 export default function AnnouncementBar() {
   return (
@@ -9,6 +10,11 @@ export default function AnnouncementBar() {
     >
       <div className="flex items-center justify-center gap-2 whitespace-nowrap text-[11px] font-medium sm:gap-3 sm:text-sm">
         <a
+          onClick={() =>
+            trackEvent("whatsapp_click", {
+              location: "announcement_bar",
+            })
+          }
           href={getWhatsAppUrl()}
           target={HAS_WHATSAPP ? "_blank" : undefined}
           rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
