@@ -6,6 +6,8 @@ export interface Service {
   icon: string;
   color: string;
   features: string[];
+  image: "phone" | "laptop" | "tablet" | "ac";
+  imagePosition?: string;
 }
 
 export const services: Service[] = [
@@ -18,6 +20,8 @@ export const services: Service[] = [
     icon: "smartphone",
     color: "primary",
     features: ["Fast screen service", "Quality-tested parts"],
+    image: "phone",
+    imagePosition: "center",
   },
   {
     id: 2,
@@ -28,6 +32,8 @@ export const services: Service[] = [
     icon: "laptop",
     color: "purple",
     features: ["Board-level diagnostics", "Repair warranty included"],
+    image: "laptop",
+    imagePosition: "center",
   },
   {
     id: 3,
@@ -38,6 +44,8 @@ export const services: Service[] = [
     icon: "tablet",
     color: "amber",
     features: ["Screen replacements", "Pickup options available"],
+    image: "tablet",
+    imagePosition: "center",
   },
   {
     id: 4,
@@ -48,5 +56,19 @@ export const services: Service[] = [
     icon: "smartphone",
     color: "primary",
     features: ["Multi-brand support", "Clear quote before repair"],
+    image: "phone",
+    imagePosition: "center",
+  },
+  {
+    id: 5,
+    slug: "ac-repair-dubai",
+    title: "AC Repair",
+    description:
+      "Split AC inspection, cooling issue checks, cleaning and repair support for homes and offices in Dubai.",
+    icon: "air",
+    color: "teal",
+    features: ["Cooling fault checks", "Home visit support"],
+    image: "ac",
+    imagePosition: "center",
   },
 ];

@@ -170,6 +170,34 @@ export const repairServicePages: RepairServicePage[] = [
     ],
     relatedGuideSlugs: ["choose-mobile-repair-shop-dubai"],
   },
+  {
+    slug: "ac-repair-dubai",
+    name: "AC Repair",
+    title: "AC Repair in Dubai",
+    description:
+      "AC inspection and repair support in Dubai for cooling issues, split AC cleaning, airflow problems and home or office service inquiries.",
+    summary: "Split AC cooling checks, cleaning and repair support for homes and offices in Dubai.",
+    intro:
+      "A weak or noisy AC can make Dubai days uncomfortable quickly. Share the unit type, symptoms and location, and we confirm inspection options, expected timing and quotation details before approved service begins.",
+    issues: [
+      "Split AC not cooling well or blowing warm air",
+      "Weak airflow, water leakage or unusual noise",
+      "Filter, coil and indoor unit cleaning inquiries",
+      "Home and office AC fault checks before repair",
+    ],
+    process: [
+      { title: "Share the AC symptoms", description: "Tell us the unit type, room size, cooling issue and any leakage or noise details." },
+      { title: "Confirm visit options", description: "We check technician availability, location coverage, expected timing and inspection needs." },
+      { title: "Review the quotation", description: "The proposed service, parts if needed and warranty terms are explained before work begins." },
+      { title: "Service and test cooling", description: "Approved work is completed and airflow, drainage and cooling performance are checked." },
+    ],
+    faqs: [
+      { question: "Do you handle split AC repair in Dubai?", answer: "Yes. We accept split AC repair and inspection inquiries for common cooling, airflow, leakage and noise problems. Final scope depends on inspection." },
+      { question: "Can I book AC repair on WhatsApp?", answer: "Yes. Send the AC type, location, issue details and photos or videos if possible so we can confirm the next available option." },
+      { question: "Is AC cleaning included with repair?", answer: "Cleaning may be recommended depending on the fault and unit condition. We confirm what is included before you approve the service." },
+    ],
+    relatedGuideSlugs: ["choose-mobile-repair-shop-dubai"],
+  },
 ];
 
 export const repairGuides: RepairGuide[] = [

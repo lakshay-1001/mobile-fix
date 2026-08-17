@@ -9,12 +9,15 @@ export default function ServicesSection() {
   return (
     <section
       className="
+      relative
+      overflow-hidden
       py-16
       md:py-24
-      bg-gray-50
+      bg-[linear-gradient(180deg,#fffafd_0%,#f7f4f7_48%,#ffffff_100%)]
     "
       id="services"
     >
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#b7004f]/25 to-transparent" />
       <Container>
         <div
           className="
@@ -22,7 +25,9 @@ export default function ServicesSection() {
           flex-col
           md:flex-row
           justify-between
-          mb-16
+          gap-6
+          mb-10
+          md:mb-14
         "
         >
           <SectionHeading
@@ -31,18 +36,20 @@ export default function ServicesSection() {
             description="Precision engineering meets rapid service."
           />
 
-          <div className="mt-4 flex flex-wrap gap-4 font-semibold text-[#b7004f]">
-            <Link to="/services" className="hover:underline">View all repair services</Link>
-            <a href="#faqs" className="hover:underline">Common repair questions</a>
+          <div className="mt-1 flex flex-wrap items-center gap-3 font-semibold text-[#b7004f] md:justify-end">
+            <Link to="/services" className="rounded-full border border-[#b7004f]/20 bg-white px-5 py-3 shadow-sm transition-colors hover:bg-[#fff0f7]">View all repair services</Link>
+            <a href="#faqs" className="rounded-full px-5 py-3 transition-colors hover:bg-white">Common repair questions</a>
           </div>
         </div>
 
         <div
           className="
           grid
-          md:grid-cols-2
-          lg:grid-cols-2
-          gap-8
+          auto-rows-fr
+          sm:grid-cols-2
+          xl:grid-cols-3
+          gap-5
+          lg:gap-6
         "
         >
           {services.map((service) => (

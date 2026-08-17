@@ -11,7 +11,7 @@ export default function WhyChooseUsSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeading
-              title="Why Dubai Customers"
+              title="Why Customers"
               highlight="Choose Us"
               description="Clear communication, convenient doorstep service and support after your repair."
             />
