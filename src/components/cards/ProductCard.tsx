@@ -1,4 +1,4 @@
-import { ShoppingCart, MessageCircle, Package } from "lucide-react";
+import { ShoppingCart, MessageCircle } from "lucide-react";
 import type { Product } from "../../data/products";
 import { getWhatsAppUrl, HAS_WHATSAPP } from "../../config/site";
 import { trackEvent } from "../../config/analytics";
@@ -103,7 +103,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             href={whatsappUrl}
             target={HAS_WHATSAPP ? "_blank" : undefined}
             rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
-            disabled={isOutOfStock}
+            // disabled={isOutOfStock}
             className={`flex-1 flex items-center justify-center gap-2 rounded-full font-bold py-3 px-4 text-sm transition-all ${
               isOutOfStock
                 ? "bg-gray-100 text-gray-400 cursor-not-allowed"
