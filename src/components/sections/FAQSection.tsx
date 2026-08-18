@@ -46,7 +46,7 @@ export default function FAQSection() {
           <SectionHeading
             title="Frequently Asked"
             highlight="Questions"
-            description="Everything you need to know before booking your repair appointment."
+            description="Everything you need to know before booking your fix appointment."
             center
           />
 

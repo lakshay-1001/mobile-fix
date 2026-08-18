@@ -21,19 +21,19 @@ const iphoneSolutions = [
   { label: "iPhone Screen Replacement", to: "/contact" },
   { label: "iPhone Battery Replacement", to: "/contact" },
   { label: "iPhone Camera Replacement", to: "/contact" },
-  { label: "Repair Guidelines", to: "/warranty" },
+  { label: "Fix Guidelines", to: "/warranty" },
   { label: "FAQs", to: "/faq" },
-  { label: "Book a Repair", to: "/contact" },
+  { label: "Book a Fix", to: "/contact" },
 ];
 
 const helpfulLinks = [
-  { label: "All repair services", to: "/services" },
-  { label: "iPhone repair in Dubai", to: "/services/iphone-repair-dubai" },
-  { label: "Mobile repair in Bur Dubai", to: "/services/mobile-phone-repair-bur-dubai" },
-  { label: "Phone repair guides", to: "/blog" },
+  { label: "All fix services", to: "/services" },
+  { label: "iPhone fix in Dubai", to: "/services/iphone-fix-dubai" },
+  { label: "Mobile fix in Bur Dubai", to: "/services/mobile-phone-fix-bur-dubai" },
+  { label: "Phone fix guides", to: "/blog" },
   { label: "Our Bur Dubai shop", to: "/locations" },
   { label: "About us", to: "/about" },
-  { label: "Repair warranty", to: "/warranty" },
+  { label: "fix warranty", to: "/warranty" },
   { label: "Terms of service", to: "/terms" },
   { label: "Privacy policy", to: "/privacy" },
 ];
@@ -105,7 +105,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-sm text-sm leading-7 text-white/75 mx-auto md:mx-0">
-              Same-day phone, tablet and laptop repairs at homes and offices
+              Same-day phone, tablet and laptop fixes at homes and offices
               across Dubai.
             </p>
 
@@ -200,7 +200,7 @@ export default function Footer() {
                 </div>
 
                 <p className="text-xs leading-5 text-white/55">
-                  Doorstep service • Open 7 days • Repair warranty
+                  Doorstep service • Open 7 days • Fixes warranty
                 </p>
               </div>
             </div>

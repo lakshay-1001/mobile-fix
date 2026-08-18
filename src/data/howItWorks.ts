@@ -22,7 +22,7 @@ export const howItWorks: Step[] = [
   },
   {
     id: 3,
-    title: "Approve the Repair",
+    title: "Approve the Fixes",
     description:
       "Work begins only after you approve the quotation and applicable warranty information.",
     icon: "Wrench",
@@ -31,7 +31,7 @@ export const howItWorks: Step[] = [
     id: 4,
     title: "Test and Complete",
     description:
-      "Review the completed work, test the device and receive the repair record or invoice.",
+      "Review the completed work, test the device and receive the service record or invoice.",
     icon: "BadgeCheck",
   },
 ];

@@ -6,7 +6,7 @@ export default function FloatingWhatsAppButton() {
   return (
     <a   
       href={getWhatsAppUrl(
-        "Hi Azan Mobile Fix, I want to book a mobile repair service in Dubai."
+        "Hi Azan Mobile Fix, I want to book a mobile fix service in Dubai."
       )}
       target={HAS_WHATSAPP ? "_blank" : undefined}
       rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined}
@@ -15,7 +15,7 @@ export default function FloatingWhatsAppButton() {
           location: "floating_button",
         })
       }
-      aria-label={HAS_WHATSAPP ? "Chat with us on WhatsApp" : "Send repair inquiry"}
+      aria-label={HAS_WHATSAPP ? "Chat with us on WhatsApp" : "Send fix inquiry"}
       className="
         fixed
         bottom-5

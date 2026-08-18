@@ -24,7 +24,7 @@ export default function HeroSection() {
           animate={{ scale: 1.03 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           src={heroImage}
-          alt="Mobile phone opened for professional repair in Dubai"
+          alt="Mobile phone opened for professional fix in Dubai"
           width="512"
           height="512"
           loading="eager"
@@ -46,14 +46,14 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mb-7 inline-flex min-h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#d81b60] to-[#8138b2] px-5 text-[11px] font-bold uppercase tracking-[2px] text-white shadow-lg sm:px-7 sm:text-xs"
           >
-            Doorstep repair across Dubai
+            Doorstep fix across Dubai
           </motion.p>
 
           <motion.h1
             variants={itemVariants}
             className="mb-6 text-[40px] font-black leading-[44px] tracking-[-0.04em] text-[#171217] sm:text-[58px] sm:leading-[62px] lg:text-[76px] lg:leading-[80px]"
           >
-            Mobile Phone Repair
+            Mobile Phone fix
             <span className="block">in Dubai</span>
             <GradientText className="block">At Your Door</GradientText>
           </motion.h1>
@@ -62,7 +62,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="max-w-[570px] text-[16px] font-medium leading-7 text-white lg:text-[#4f3b44] sm:text-lg sm:leading-8"
           >
-            Get convenient smartphone, tablet and laptop repairs at your home or office.
+            Get convenient smartphone, tablet and laptop fixes at your home or office.
             From cracked screens to battery problems, our technicians serve customers across Dubai.
           </motion.p>
 
@@ -88,7 +88,7 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.p variants={itemVariants} className="mt-5 text-sm font-semibold text-[#5a4045]">
-            Doorstep service <span aria-hidden="true">•</span> Open 7 days <span aria-hidden="true">•</span> Repair warranty
+            Doorstep service <span aria-hidden="true">•</span> Open 7 days <span aria-hidden="true">•</span> Fix warranty
           </motion.p>
         </div>
       </motion.div>

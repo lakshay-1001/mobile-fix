@@ -15,7 +15,7 @@ export const localBusinessSchema = {
   "@id": getSiteUrl("/#business"),
   name: SITE_NAME,
   legalName: LEGAL_BUSINESS_NAME,
-  description: "Mobile phone, tablet and laptop repair services from a local shop in Meena Bazaar, Bur Dubai.",
+  description: "Mobile phone, tablet and laptop support services from a local shop in Meena Bazaar, Bur Dubai.",
   url: getSiteUrl("/"),
   logo: getSiteUrl(BRAND_MARK_LARGE),
   image: getSiteUrl("/og-image.png"),
@@ -35,12 +35,12 @@ export const localBusinessSchema = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Device repair services",
+    name: "Device services",
     itemListElement: [
-      "iPhone repair",
-      "Samsung and Android phone repair",
-      "iPad and tablet repair",
-      "MacBook and laptop repair",
+      "iPhone",
+      "Samsung and Android phone",
+      "iPad and tablet",
+      "MacBook and laptop",
     ].map((name) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },
@@ -116,7 +116,7 @@ export function createArticleSchema(article: {
     image: getSiteUrl("/og-image.png"),
     datePublished: article.published,
     dateModified: article.modified,
-    author: { "@type": "Organization", name: `${SITE_NAME} Repair Team`, url: getSiteUrl("/about") },
+    author: { "@type": "Organization", name: `${SITE_NAME} Support Team`, url: getSiteUrl("/about") },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,

@@ -13,8 +13,8 @@ export interface Service {
 export const services: Service[] = [
   {
     id: 1,
-    slug: "iphone-repair-dubai",
-    title: "iPhone Repair",
+    slug: "iphone-fix-dubai",
+    title: "iPhone Fix",
     description:
       "Screen, battery, charging and diagnostic services for a wide range of iPhone models.",
     icon: "smartphone",
@@ -25,22 +25,22 @@ export const services: Service[] = [
   },
   {
     id: 2,
-    slug: "macbook-laptop-repair-dubai",
-    title: "MacBook Service",
+    slug: "macbook-laptop-fix-dubai",
+    title: "MacBook Fix",
     description:
       "Expert diagnostics for logic boards, keyboard replacements, and RAM/SSD upgrades.",
     icon: "laptop",
     color: "purple",
-    features: ["Board-level diagnostics", "Repair warranty included"],
+    features: ["Board-level diagnostics", "Fix warranty included"],
     image: "laptop",
     imagePosition: "center",
   },
   {
     id: 3,
-    slug: "ipad-tablet-repair-dubai",
+    slug: "ipad-tablet-fix-dubai",
     title: "iPad & Tablet",
     description:
-      "Cracked screens and charging port repairs for all tablet devices.",
+      "Cracked screens and charging port fixes for all tablet devices.",
     icon: "tablet",
     color: "amber",
     features: ["Screen replacements", "Pickup options available"],
@@ -49,22 +49,22 @@ export const services: Service[] = [
   },
   {
     id: 4,
-    slug: "samsung-phone-repair-dubai",
-    title: "Android Phone Repair",
+    slug: "samsung-phone-fix-dubai",
+    title: "Android Phone Fix",
     description:
-      "Screen, battery, camera and charging repairs for Samsung, Google, OnePlus and other Android phones.",
+      "Screen, battery, camera and charging fixes for Samsung, Google, OnePlus and other Android phones.",
     icon: "smartphone",
     color: "primary",
-    features: ["Multi-brand support", "Clear quote before repair"],
+    features: ["Multi-brand support", "Clear quote before fixing"],
     image: "phone",
     imagePosition: "center",
   },
   {
     id: 5,
-    slug: "ac-repair-dubai",
-    title: "AC Repair",
+    slug: "ac-fix-dubai",
+    title: "AC Fix",
     description:
-      "Split AC inspection, cooling issue checks, cleaning and repair support for homes and offices in Dubai.",
+      "Split AC inspection, cooling issue checks, cleaning and fix support for homes and offices in Dubai.",
     icon: "air",
     color: "teal",
     features: ["Cooling fault checks", "Home visit support"],

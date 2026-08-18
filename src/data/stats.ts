@@ -14,7 +14,7 @@ export const stats: Stat[] = [
   },
   {
     value: "Up to 90 Days",
-    label: "Repair Warranty",
+    label: "fix Warranty",
   },
   {
     value: "Dubai",

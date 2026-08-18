@@ -191,7 +191,7 @@ export default function LegalPageLayout({
             "
           >
             Important information regarding
-            our repair services, customer
+            our fix services, customer
             protection policies, warranty
             coverage and support commitments.
           </p>

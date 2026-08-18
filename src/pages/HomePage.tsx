@@ -60,8 +60,8 @@ export default function HomePage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="Mobile Phone Repair Dubai"
-        description="Mobile phone, iPhone, Samsung, tablet and laptop repair services across Dubai from Azan Mobile Fix in Bur Dubai."
+        title="Mobile Phone Services Dubai"
+        description="Mobile phone, iPhone, Samsung, tablet and laptop fixing services across Dubai from Azan Mobile Fix in Bur Dubai."
         structuredData={homeSchema}
       />
       <HeroSection />

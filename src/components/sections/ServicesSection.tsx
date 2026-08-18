@@ -31,14 +31,14 @@ export default function ServicesSection() {
         "
         >
           <SectionHeading
-            title="Our Repair"
+            title="Our Services"
             highlight="Ecosystem"
             description="Precision engineering meets rapid service."
           />
 
           <div className="mt-1 flex flex-wrap items-center gap-3 font-semibold text-[#b7004f] md:justify-end">
-            <Link to="/services" className="rounded-full border border-[#b7004f]/20 bg-white px-5 py-3 shadow-sm transition-colors hover:bg-[#fff0f7]">View all repair services</Link>
-            <a href="#faqs" className="rounded-full px-5 py-3 transition-colors hover:bg-white">Common repair questions</a>
+            <Link to="/services" className="rounded-full border border-[#b7004f]/20 bg-white px-5 py-3 shadow-sm transition-colors hover:bg-[#fff0f7]">View all services</Link>
+            <a href="#faqs" className="rounded-full px-5 py-3 transition-colors hover:bg-white">Common questions</a>
           </div>
         </div>
 

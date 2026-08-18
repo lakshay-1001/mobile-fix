@@ -15,7 +15,7 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-16 md:py-24">
       <Container>
         <SectionHeading
-          title="Repairing is"
+          title="Fixing is"
           highlight="Effortless"
           description="We've streamlined the process to fit your busy Dubai lifestyle."
           center

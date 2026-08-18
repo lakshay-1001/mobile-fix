@@ -24,7 +24,7 @@ const initialForm: ContactMessage = {
   name: "",
   email: "",
   phone: "",
-  inquiryType: "Repair inquiry",
+  inquiryType: "Fixing inquiry",
   device: "",
   message: "",
 };
@@ -95,8 +95,8 @@ export default function ContactPage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="Contact Our Mobile Repair Shop in Bur Dubai"
-        description="Contact Azan Mobile Fix or visit our mobile repair shop on 25C Street in Meena Bazaar, Bur Dubai."
+        title="Contact Our Mobile Fix Shop in Bur Dubai"
+        description="Contact Azan Mobile Fix or visit our mobile fix shop on 25C Street in Meena Bazaar, Bur Dubai."
         path="/contact"
       />
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
               Tell us what your device needs
             </h1>
             <p className="mt-4 text-lg leading-8 text-[#5a4045]">
-              Send a repair inquiry or visit our single Bur Dubai shop. Please do not include passwords,
+              Send a fixing inquiry or visit our single Bur Dubai shop. Please do not include passwords,
               payment details or sensitive files in your message.
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   <label className="block min-w-0 font-semibold" htmlFor="inquiry-type">
                     Inquiry type *
                     <select id="inquiry-type" name="inquiry_type" required value={form.inquiryType} onChange={(event) => updateField("inquiryType", event.target.value)} className={`${fieldClassName} mt-2`}>
-                      <option>Repair inquiry</option>
+                      <option>Fixing inquiry</option>
                       <option>Warranty question</option>
                       <option>Complaint</option>
                       <option>Privacy request</option>

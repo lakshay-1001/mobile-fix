@@ -15,7 +15,7 @@ export default function MobileBottomNav() {
 
       <button className="flex flex-col items-center justify-center text-[#5a4045] transition-all">
         <Wrench size={20} />
-        <span className="text-[12px]">Repairs</span>
+        <span className="text-[12px]">Fixes</span>
       </button>
 
       <button className="flex flex-col items-center justify-center text-[#5a4045] transition-all">

@@ -31,9 +31,9 @@ export interface RepairGuide {
 
 export const repairServicePages: RepairServicePage[] = [
   {
-    slug: "iphone-repair-dubai",
-    name: "iPhone Repair",
-    title: "iPhone Repair in Dubai",
+    slug: "iphone-fix-dubai",
+    name: "iPhone Fix",
+    title: "iPhone Fix in Dubai",
     description:
       "iPhone screen, battery, charging and fault diagnosis in Dubai. Visit Azan Mobile Fix in Bur Dubai or ask about a doorstep appointment.",
     summary: "Screen, battery, charging and diagnostic support for a wide range of iPhone models.",
@@ -43,28 +43,28 @@ export const repairServicePages: RepairServicePage[] = [
       "Cracked, unresponsive or discoloured iPhone screens",
       "Battery drain, unexpected shutdowns or charging problems",
       "Charging-port, speaker, microphone and camera faults",
-      "Software symptoms that require diagnosis before repair",
+      "Software symptoms that require diagnosis before fixing or replacing parts",
     ],
     process: [
       { title: "Tell us the model and fault", description: "Share the iPhone model, visible damage and when the problem started." },
       { title: "Receive an assessment", description: "We confirm inspection needs, parts availability, expected timing and a quotation." },
-      { title: "Approve the repair", description: "Work starts only after you understand and approve the proposed service." },
-      { title: "Test before collection", description: "Relevant functions are checked and the applicable repair warranty is explained." },
+      { title: "Approve the fixes", description: "Work starts only after you understand and approve the proposed service." },
+      { title: "Test before collection", description: "Relevant functions are checked and the applicable fix warranty is explained." },
     ],
     faqs: [
-      { question: "Can you repair an iPhone screen in Dubai?", answer: "We handle screen-related inquiries for a wide range of iPhone models. Timing and parts availability are confirmed after the exact model and damage are checked." },
+      { question: "Can you fix an iPhone screen in Dubai?", answer: "We handle screen-related inquiries for a wide range of iPhone models. Timing and parts availability are confirmed after the exact model and damage are checked." },
       { question: "Do you replace iPhone batteries?", answer: "Battery service is available for supported models. We first check the symptoms because rapid battery drain can also be caused by software, charging accessories or another hardware fault." },
-      { question: "Is doorstep iPhone repair available?", answer: "Doorstep appointments may be available across Dubai depending on the model, repair type, technician schedule and required equipment. Some repairs must be completed at the shop." },
+      { question: "Is doorstep iPhone fix available?", answer: "Doorstep appointments may be available across Dubai depending on the model, fix type, technician schedule and required equipment. Some fixes must be completed at the shop." },
     ],
     relatedGuideSlugs: ["iphone-battery-replacement-signs", "what-to-do-after-phone-screen-cracks"],
   },
   {
-    slug: "samsung-phone-repair-dubai",
-    name: "Samsung Phone Repair",
-    title: "Samsung Phone Repair in Dubai",
+    slug: "samsung-phone-fix-dubai",
+    name: "Samsung Phone Fix",
+    title: "Samsung Phone Fix in Dubai",
     description:
-      "Samsung Galaxy screen, battery, charging and camera repair inquiries in Dubai. Get an assessment from our mobile repair shop in Bur Dubai.",
-    summary: "Repair assessment for Samsung Galaxy screens, batteries, charging ports, cameras and common faults.",
+      "Samsung Galaxy screen, battery, charging and camera fix inquiries in Dubai. Get an assessment from our mobile repair shop in Bur Dubai.",
+    summary: "Fix assessment for Samsung Galaxy screens, batteries, charging ports, cameras and common faults.",
     intro:
       "Samsung Galaxy devices vary by model and region, so the correct model number matters when checking parts and repair options. Send us the model and symptoms, or visit the shop for an inspection and clear quotation.",
     issues: [
@@ -87,14 +87,14 @@ export const repairServicePages: RepairServicePage[] = [
     relatedGuideSlugs: ["what-to-do-after-phone-screen-cracks", "phone-not-charging-causes"],
   },
   {
-    slug: "mobile-phone-repair-bur-dubai",
-    name: "Mobile Phone Repair",
-    title: "Mobile Phone Repair Shop in Bur Dubai",
+    slug: "mobile-phone-fix-bur-dubai",
+    name: "Mobile Phone Fix",
+    title: "Mobile Phone Fix Shop in Bur Dubai",
     description:
-      "Looking for a mobile repair shop near you in Bur Dubai? Visit Azan Mobile Fix in Meena Bazaar for phone diagnostics and repair inquiries.",
-    summary: "A local Meena Bazaar repair shop for iPhone, Samsung and other smartphone repair inquiries.",
+      "Looking for a mobile fix shop near you in Bur Dubai? Visit Azan Mobile Fix in Meena Bazaar for phone diagnostics and fix inquiries.",
+    summary: "A local Meena Bazaar fix shop for iPhone, Samsung and other smartphone fix inquiries.",
     intro:
-      "If you are searching for a mobile repair shop near you in Bur Dubai, our single shop is on 25C Street in Meena Bazaar, close to Astoria Hotel. We assess common smartphone faults and explain parts, timing and warranty terms before repair work begins.",
+      "If you are searching for a mobile fix shop near you in Bur Dubai, our single shop is on 25C Street in Meena Bazaar, close to Astoria Hotel. We assess common smartphone faults and explain parts, timing and warranty terms before fix work begins.",
     issues: [
       "Broken or unresponsive smartphone screens",
       "Battery, charging-port and power faults",
@@ -104,22 +104,22 @@ export const repairServicePages: RepairServicePage[] = [
     process: [
       { title: "Visit or message the shop", description: "Bring the device to Meena Bazaar or send the model and fault through WhatsApp." },
       { title: "Device inspection", description: "We examine the reported problem and identify whether further diagnosis is required." },
-      { title: "Clear approval", description: "You receive the repair option, quotation, expected timing and warranty information." },
-      { title: "Repair and testing", description: "Approved work is completed and the relevant device functions are checked." },
+      { title: "Clear approval", description: "You receive the fix option, quotation, expected timing and warranty information." },
+      { title: "Fixing and testing", description: "Approved work is completed and the relevant device functions are checked." },
     ],
     faqs: [
-      { question: "Where is your mobile repair shop in Bur Dubai?", answer: "Azan Mobile Fix is on 25C Street in Meena Bazaar, Bur Dubai, near Astoria Hotel and Mini Panjab Restaurant." },
+      { question: "Where is your mobile fix shop in Bur Dubai?", answer: "Azan Mobile Fix is on 25C Street in Meena Bazaar, Bur Dubai, near Astoria Hotel and Mini Panjab Restaurant." },
       { question: "Do I need an appointment?", answer: "You may visit during opening hours, but messaging first helps us check technician and parts availability for your model." },
       { question: "Do you have other Dubai branches?", answer: "No. We currently operate one customer-facing shop in Meena Bazaar, Bur Dubai." },
     ],
-    relatedGuideSlugs: ["choose-mobile-repair-shop-dubai", "what-to-do-after-phone-screen-cracks"],
+    relatedGuideSlugs: ["choose-mobile-fix-shop-dubai", "what-to-do-after-phone-screen-cracks"],
   },
   {
-    slug: "ipad-tablet-repair-dubai",
-    name: "iPad & Tablet Repair",
-    title: "iPad and Tablet Repair in Dubai",
+    slug: "ipad-tablet-fix-dubai",
+    name: "iPad & Tablet Fix",
+    title: "iPad and Tablet Fix in Dubai",
     description:
-      "iPad and Android tablet screen, charging and battery repair inquiries in Dubai. Ask Azan Mobile Fix about assessment and availability.",
+      "iPad and Android tablet screen, charging and battery fix inquiries in Dubai. Ask Azan Mobile Fix about assessment and availability.",
     summary: "Screen, charging, battery and fault assessment for iPads and Android tablets.",
     intro:
       "Tablet construction and parts differ significantly between models. We confirm the exact model, inspect the fault and explain whether the device can be serviced before asking you to approve any work.",
@@ -137,18 +137,18 @@ export const repairServicePages: RepairServicePage[] = [
     ],
     faqs: [
       { question: "Can you assess a cracked iPad screen?", answer: "Yes. The exact iPad model and whether the image and touch still work help determine the appropriate assessment." },
-      { question: "Do tablet repairs require a shop visit?", answer: "Many tablet repairs are best completed at the shop because they require controlled heating, tools and testing. Contact us first to confirm." },
-      { question: "How long does a tablet repair take?", answer: "Timing depends on diagnosis, model, parts availability and repair complexity. We provide an estimate before work begins." },
+      { question: "Do tablet fixes require a shop visit?", answer: "Many tablet fixes are best completed at the shop because they require controlled heating, tools and testing. Contact us first to confirm." },
+      { question: "How long does a tablet fix take?", answer: "Timing depends on diagnosis, model, parts availability and fix complexity. We provide an estimate before work begins." },
     ],
-    relatedGuideSlugs: ["phone-not-charging-causes", "choose-mobile-repair-shop-dubai"],
+    relatedGuideSlugs: ["phone-not-charging-causes", "choose-mobile-fix-shop-dubai"],
   },
   {
-    slug: "macbook-laptop-repair-dubai",
-    name: "MacBook & Laptop Repair",
-    title: "MacBook and Laptop Repair in Dubai",
+    slug: "macbook-laptop-fix-dubai",
+    name: "MacBook & Laptop Fix",
+    title: "MacBook and Laptop Fix in Dubai",
     description:
       "MacBook and Windows laptop diagnostics in Dubai for charging, keyboard, storage and other hardware faults. Visit our Bur Dubai shop.",
-    summary: "Diagnostic and repair inquiries for MacBook and Windows laptop hardware faults.",
+    summary: "Diagnostic and fix inquiries for MacBook and Windows laptop hardware faults.",
     intro:
       "Laptop symptoms can have several causes, so reliable diagnosis matters before replacing parts. Our team accepts MacBook and Windows laptop inquiries and confirms the inspection process, quotation and expected timing before service.",
     issues: [
@@ -160,30 +160,30 @@ export const repairServicePages: RepairServicePage[] = [
     process: [
       { title: "Describe the laptop fault", description: "Share the brand, model and any warning lights, sounds or error messages." },
       { title: "Back up when possible", description: "Protect important data before service whenever the laptop remains usable." },
-      { title: "Diagnosis and quotation", description: "We explain findings, repair options, timing and warranty information." },
-      { title: "Approval and testing", description: "Only approved work proceeds, followed by checks relevant to the repair." },
+      { title: "Diagnosis and quotation", description: "We explain findings, fix options, timing and warranty information." },
+      { title: "Approval and testing", description: "Only approved work proceeds, followed by checks relevant to the fix." },
     ],
     faqs: [
-      { question: "Do you repair both MacBook and Windows laptops?", answer: "We accept diagnostic inquiries for MacBook and many Windows laptop models. Support depends on the device, fault and parts availability." },
-      { question: "Should I back up my laptop before repair?", answer: "Yes, when possible. Hardware service can involve storage or software risks, so keep a current backup and do not share account passwords unless strictly necessary." },
-      { question: "Can you quote a board repair without inspection?", answer: "Board-level faults usually require physical diagnosis. We can discuss symptoms first, but a reliable quotation normally follows inspection." },
+      { question: "Do you fix both MacBook and Windows laptops?", answer: "We accept diagnostic inquiries for MacBook and many Windows laptop models. Support depends on the device, fault and parts availability." },
+      { question: "Should I back up my laptop before fix?", answer: "Yes, when possible. Hardware service can involve storage or software risks, so keep a current backup and do not share account passwords unless strictly necessary." },
+      { question: "Can you quote a board fix without inspection?", answer: "Board-level faults usually require physical diagnosis. We can discuss symptoms first, but a reliable quotation normally follows inspection." },
     ],
-    relatedGuideSlugs: ["choose-mobile-repair-shop-dubai"],
+    relatedGuideSlugs: ["choose-mobile-fix-shop-dubai"],
   },
   {
-    slug: "ac-repair-dubai",
-    name: "AC Repair",
-    title: "AC Repair in Dubai",
+    slug: "ac-fix-dubai",
+    name: "AC fix",
+    title: "AC Fix in Dubai",
     description:
-      "AC inspection and repair support in Dubai for cooling issues, split AC cleaning, airflow problems and home or office service inquiries.",
-    summary: "Split AC cooling checks, cleaning and repair support for homes and offices in Dubai.",
+      "AC inspection and fix support in Dubai for cooling issues, split AC cleaning, airflow problems and home or office service inquiries.",
+    summary: "Split AC cooling checks, cleaning and fix support for homes and offices in Dubai.",
     intro:
       "A weak or noisy AC can make Dubai days uncomfortable quickly. Share the unit type, symptoms and location, and we confirm inspection options, expected timing and quotation details before approved service begins.",
     issues: [
       "Split AC not cooling well or blowing warm air",
       "Weak airflow, water leakage or unusual noise",
       "Filter, coil and indoor unit cleaning inquiries",
-      "Home and office AC fault checks before repair",
+      "Home and office AC fault checks before fixing or replacing parts",
     ],
     process: [
       { title: "Share the AC symptoms", description: "Tell us the unit type, room size, cooling issue and any leakage or noise details." },
@@ -192,11 +192,11 @@ export const repairServicePages: RepairServicePage[] = [
       { title: "Service and test cooling", description: "Approved work is completed and airflow, drainage and cooling performance are checked." },
     ],
     faqs: [
-      { question: "Do you handle split AC repair in Dubai?", answer: "Yes. We accept split AC repair and inspection inquiries for common cooling, airflow, leakage and noise problems. Final scope depends on inspection." },
-      { question: "Can I book AC repair on WhatsApp?", answer: "Yes. Send the AC type, location, issue details and photos or videos if possible so we can confirm the next available option." },
-      { question: "Is AC cleaning included with repair?", answer: "Cleaning may be recommended depending on the fault and unit condition. We confirm what is included before you approve the service." },
+      { question: "Do you handle split AC fix in Dubai?", answer: "Yes. We accept split AC fix and inspection inquiries for common cooling, airflow, leakage and noise problems. Final scope depends on inspection." },
+      { question: "Can I book AC fix on WhatsApp?", answer: "Yes. Send the AC type, location, issue details and photos or videos if possible so we can confirm the next available option." },
+      { question: "Is AC cleaning included with fix?", answer: "Cleaning may be recommended depending on the fault and unit condition. We confirm what is included before you approve the service." },
     ],
-    relatedGuideSlugs: ["choose-mobile-repair-shop-dubai"],
+    relatedGuideSlugs: ["choose-mobile-fix-shop-dubai"],
   },
 ];
 
@@ -223,7 +223,7 @@ export const repairGuides: RepairGuide[] = [
         heading: "Protect your data while the display still works",
         paragraphs: [
           "Back up important photos, contacts and files as soon as practical. Damage can spread after another impact or as moisture enters through the crack. A current cloud or computer backup reduces the risk if the display later becomes unusable.",
-          "You normally should not give a repair provider your personal passwords. Remove sensitive notifications from the lock screen and use a device repair or maintenance mode when the manufacturer offers one.",
+          "You normally should not give a fix provider your personal passwords. Remove sensitive notifications from the lock screen and use a device fix or maintenance mode when the manufacturer offers one.",
         ],
       },
       {
@@ -241,7 +241,7 @@ export const repairGuides: RepairGuide[] = [
         bullets: ["Exact model or model number", "Photo of the front and damaged corner", "Touch and display condition", "Any prior repair or liquid exposure"],
       },
     ],
-    relatedServiceSlugs: ["iphone-repair-dubai", "samsung-phone-repair-dubai", "mobile-phone-repair-bur-dubai"],
+    relatedServiceSlugs: ["iphone-fix-dubai", "samsung-phone-fix-dubai", "mobile-phone-fix-bur-dubai"],
   },
   {
     slug: "iphone-battery-replacement-signs",
@@ -282,13 +282,13 @@ export const repairGuides: RepairGuide[] = [
         bullets: ["Is diagnosis included?", "What battery option is available for this model?", "What warranty applies to the service?", "Will charging and power functions be tested?"],
       },
     ],
-    relatedServiceSlugs: ["iphone-repair-dubai"],
+    relatedServiceSlugs: ["iphone-fix-dubai"],
   },
   {
     slug: "phone-not-charging-causes",
     title: "Why Is My Phone Not Charging? Safe Checks to Try",
     description:
-      "Safe checks for a phone that will not charge, including cables, adapters, ports, moisture warnings and signs that require repair diagnosis.",
+      "Safe checks for a phone that will not charge, including cables, adapters, ports, moisture warnings and signs that require fix diagnosis.",
     excerpt: "Test the easy causes first and know when to stop troubleshooting a charging problem at home.",
     published: "2026-08-03",
     modified: "2026-08-03",
@@ -323,13 +323,13 @@ export const repairGuides: RepairGuide[] = [
         bullets: ["Charging works only when the cable is moved", "The connector feels loose", "The phone overheats or smells unusual", "Multiple compatible chargers fail"],
       },
     ],
-    relatedServiceSlugs: ["iphone-repair-dubai", "samsung-phone-repair-dubai", "ipad-tablet-repair-dubai"],
+    relatedServiceSlugs: ["iphone-fix-dubai", "samsung-phone-fix-dubai", "ipad-tablet-fix-dubai"],
   },
   {
-    slug: "choose-mobile-repair-shop-dubai",
-    title: "How to Choose a Mobile Repair Shop in Dubai",
+    slug: "choose-mobile-fix-shop-dubai",
+    title: "How to Choose a Mobile Fix Shop in Dubai",
     description:
-      "A practical checklist for comparing mobile repair shops in Dubai: business identity, diagnosis, quotation, parts, privacy and warranty.",
+      "A practical checklist for comparing mobile fix shops in Dubai: business identity, diagnosis, quotation, parts, privacy and warranty.",
     excerpt: "Use clear questions about diagnosis, parts, data privacy and warranty before handing over your phone.",
     published: "2026-08-03",
     modified: "2026-08-03",
@@ -338,7 +338,7 @@ export const repairGuides: RepairGuide[] = [
       {
         heading: "Choose a business you can identify and revisit",
         paragraphs: [
-          "A legitimate repair provider should make its business name, location and contact method easy to find. A physical address matters when a repair needs follow-up. Check that the name and address shown online are consistent with the shop you visit.",
+          "A legitimate fix provider should make its business name, location and contact method easy to find. A physical address matters when a fix needs follow-up. Check that the name and address shown online are consistent with the shop you visit.",
           "Online ratings can be useful, but read the substance of recent reviews rather than relying only on an average score. Look for comments about communication, quotation changes and after-service support.",
         ],
       },
@@ -346,7 +346,7 @@ export const repairGuides: RepairGuide[] = [
         heading: "Ask for diagnosis and approval before work",
         paragraphs: [
           "A visible symptom does not always identify the failed part. Ask whether the quotation is preliminary or final, whether diagnosis carries a fee and what happens if additional damage is discovered after opening the device.",
-          "Do not approve vague work. The provider should be able to describe the intended repair, expected timing and total price before proceeding, subject to any clearly explained diagnostic findings.",
+          "Do not approve vague work. The provider should be able to describe the intended fix, expected timing and total price before proceeding, subject to any clearly explained diagnostic findings.",
         ],
       },
       {
@@ -365,7 +365,7 @@ export const repairGuides: RepairGuide[] = [
         ],
       },
     ],
-    relatedServiceSlugs: ["mobile-phone-repair-bur-dubai", "iphone-repair-dubai", "samsung-phone-repair-dubai", "macbook-laptop-repair-dubai"],
+    relatedServiceSlugs: ["mobile-phone-fix-bur-dubai", "iphone-fix-dubai", "samsung-phone-fix-dubai", "macbook-laptop-fix-dubai"],
   },
 ];
 

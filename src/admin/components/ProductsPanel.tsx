@@ -173,7 +173,7 @@ const paginatedProducts =
               "
             >
               Manage all products, parts,
-              and repair pricing.
+              and fix pricing.
             </p>
           </div>
 
@@ -317,7 +317,7 @@ const paginatedProducts =
             </h3>
 
             <p className="text-gray-500">
-              Add your first repair
+              Add your first fix
               product or adjust your
               search.
             </p>

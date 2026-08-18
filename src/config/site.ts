@@ -29,7 +29,7 @@ export const PHONE_LINK = HAS_CONTACT_PHONE ? `tel:${CONTACT_PHONE_E164}` : "tel
 export const HAS_WHATSAPP = HAS_CONTACT_PHONE;
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Hi Azan Mobile Fix, I would like to book a device repair in Dubai.";
+  "Hi Azan Mobile Fix, I would like to book a device fix in Dubai.";
 
 export function getWhatsAppUrl(message = DEFAULT_WHATSAPP_MESSAGE) {
   if (!HAS_WHATSAPP) return "https://wa.me/";

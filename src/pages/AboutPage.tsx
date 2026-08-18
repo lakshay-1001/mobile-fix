@@ -13,8 +13,8 @@ export default function AboutPage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="About Our Mobile Repair Shop in Bur Dubai"
-        description="Learn about Azan Mobile Fix, our single Meena Bazaar shop and our mobile device repair services in Dubai."
+        title="About Our Mobile Fix Shop in Bur Dubai"
+        description="Learn about Azan Mobile Fix, our single Meena Bazaar shop and our mobile device services in Dubai."
         path="/about"
       />
       <div className="bg-[#fffafd] px-5 py-14 sm:px-6 sm:py-20">
@@ -36,13 +36,13 @@ export default function AboutPage() {
             </section>
             <section className="rounded-[24px] border border-[#eadde5] bg-white p-7">
               <Smartphone className="text-[#b7004f]" aria-hidden="true" />
-              <h2 className="mt-4 text-2xl font-black">Repair inquiries</h2>
+              <h2 className="mt-4 text-2xl font-black">Inquiries</h2>
               <p className="mt-3 leading-7 text-[#5a4045]">Customers can ask about phone, tablet and laptop faults. Availability, parts, cost, timing and warranty are confirmed before work begins.</p>
             </section>
             <section className="rounded-[24px] border border-[#eadde5] bg-white p-7">
               <ShieldCheck className="text-[#b7004f]" aria-hidden="true" />
               <h2 className="mt-4 text-2xl font-black">Clear approval</h2>
-              <p className="mt-3 leading-7 text-[#5a4045]">A repair should begin only after the device condition, quotation, expected timing and applicable warranty have been explained and accepted.</p>
+              <p className="mt-3 leading-7 text-[#5a4045]">A fix should begin only after the device condition, quotation, expected timing and applicable warranty have been explained and accepted.</p>
             </section>
             <section className="rounded-[24px] border border-[#eadde5] bg-white p-7">
               <MapPin className="text-[#b7004f]" aria-hidden="true" />

@@ -62,7 +62,7 @@ export default function Header() {
                 </span>
               </span>
               <span className="mt-1 hidden text-[9px] font-extrabold uppercase tracking-[0.28em] text-[#8138b2] sm:block">
-                Doorstep Repair Dubai
+                Doorstep Fix Dubai
               </span>
             </span>
           </Link>

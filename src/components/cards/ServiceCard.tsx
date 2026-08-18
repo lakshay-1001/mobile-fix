@@ -132,7 +132,7 @@ export default function ServiceCard({
               {title}
             </h3>
             <span className={`${tone.soft} ${tone.text} shrink-0 rounded-full px-3 py-1 text-xs font-black`}>
-              Repair
+              Fix
             </span>
           </div>
 

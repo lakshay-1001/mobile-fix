@@ -162,7 +162,7 @@ export default function AddProductModal({
             </h2>
 
             <p className="text-gray-500 mt-1">
-              Add a device and all repair
+              Add a device and all fix
               parts pricing.
             </p>
           </div>

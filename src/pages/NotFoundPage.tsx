@@ -7,7 +7,7 @@ export default function NotFoundPage() {
     <WebsiteLayout>
       <SEO
         title="Page Not Found"
-        description="The page you requested could not be found. Return to Azan Mobile Fix for mobile repair services in Dubai."
+        description="The page you requested could not be found. Return to Azan Mobile Fix for mobile fix services in Dubai."
         path="/404"
         noIndex
       />
@@ -15,7 +15,7 @@ export default function NotFoundPage() {
         <p className="mb-3 font-bold text-[#b7004f]">404</p>
         <h1 className="text-4xl font-black tracking-tight sm:text-5xl">This page could not be found</h1>
         <p className="mt-5 text-lg leading-8 text-[#5a4045]">
-          The link may be outdated. Visit our home page to explore repair services or contact our team.
+          The link may be outdated. Visit our home page to explore fix services or contact our team.
         </p>
         <Link
           to="/"

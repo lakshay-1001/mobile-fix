@@ -90,7 +90,7 @@ export default function TestimonialSection() {
               max-w-2xl
               "
             >
-              Reviews reflect individual customer experiences. Approval means a review passed moderation; it does not by itself verify a repair purchase.
+              Reviews reflect individual customer experiences. Approval means a review passed moderation; it does not by itself verify a purchase.
             </p>
 
             <div

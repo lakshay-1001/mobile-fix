@@ -111,7 +111,7 @@ export default function CTASection() {
               >
                 Don't let a broken screen slow you down.
                 Tell us about the fault and receive clear information about
-                availability, the quotation and the repair process.
+                availability, the quotation and the fix process.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function CTASection() {
                 "
               >
                 <MessageCircle className="mr-2 inline" size={19} aria-hidden="true" />
-                {HAS_WHATSAPP ? "Get a WhatsApp Quote" : "Send a Repair Inquiry"}
+                {HAS_WHATSAPP ? "Get a WhatsApp Quote" : "Send a fix Inquiry"}
               </a>
 
               <a

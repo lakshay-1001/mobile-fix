@@ -214,7 +214,7 @@ export default function SubmitReviewSection() {
             >
               Your review helps us improve
               and helps other customers
-              choose our repair services.
+              choose our fix services.
             </p>
 
           </div>

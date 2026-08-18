@@ -8,19 +8,19 @@ export const features: Feature[] = [
   {
     title: "Same-Day Service",
     description:
-      "Most repairs are completed within the same day of booking.",
+      "Most fixes are completed within the same day of booking.",
     icon: "Zap",
   },
   {
     title: "Experienced Technicians",
     description:
-      "Skilled technicians diagnose and repair a wide range of device faults.",
+      "Skilled technicians diagnose and fix a wide range of device faults.",
     icon: "ShieldCheck",
   },
   {
     title: "Quality Parts",
     description:
-      "Part options are explained clearly before your repair begins.",
+      "Part options are explained clearly before your fix begins.",
     icon: "Award",
   },
   {
@@ -32,7 +32,7 @@ export const features: Feature[] = [
   {
     title: "Warranty",
     description:
-      "The applicable warranty period is confirmed and recorded for each covered repair.",
+      "The applicable warranty period is confirmed and recorded for each covered fix.",
     icon: "BadgeCheck",
   },
   {

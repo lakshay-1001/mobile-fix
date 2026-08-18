@@ -13,7 +13,7 @@ export default function WhyChooseUsSection() {
             <SectionHeading
               title="Why Customers"
               highlight="Choose Us"
-              description="Clear communication, convenient doorstep service and support after your repair."
+              description="Clear communication, convenient doorstep service and support after your fixes."
             />
             <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
               {features.map((feature) => (
@@ -26,7 +26,7 @@ export default function WhyChooseUsSection() {
             <div className="absolute -inset-4 gradient-bg blur-2xl opacity-5 rounded-full" />
             <img
               src={repairImage}
-              alt="Technician repairing a mobile phone with precision tools"
+              alt="Technician fixing a mobile phone with precision tools"
               width="512"
               height="512"
               loading="lazy"
@@ -65,9 +65,9 @@ export default function WhyChooseUsSection() {
   animate-float
   "
 >
-              <p className="font-bold text-[#171217]">Clear repair approval</p>
+              <p className="font-bold text-[#171217]">Clear fixees approval</p>
               <p className="mt-2 text-sm leading-6 text-[#5a4045]">
-                Device condition, expected work, parts, timing, price and warranty are explained before a repair begins.
+                Device condition, expected work, parts, timing, price and warranty are explained before a fix begins.
               </p>
             </div>
           </div>
