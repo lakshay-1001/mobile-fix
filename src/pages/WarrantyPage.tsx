@@ -17,22 +17,22 @@ export default function WarrantyPage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="Mobile Repair Warranty Dubai"
-        description="Read the Azan Mobile Fix warranty periods, exclusions and claim process for screen, battery, charging port and motherboard repairs in Dubai."
+        title="Mobile Fix Warranty Dubai"
+        description="Read the Azan Mobile Fix warranty periods, exclusions and claim process for screen, battery, charging port and motherboard fixes in Dubai."
         path="/warranty"
       />
       <LegalPageLayout title="Warranty Policy">
 
         <div className="mb-8 rounded-2xl border border-[#eadde5] bg-white p-5 text-[#5a4045]">
           <p className="font-semibold text-[#171217]">Last updated: 3 August 2026</p>
-          <p className="mt-2">Azan Mobile Fix is operated by {LEGAL_BUSINESS_NAME}. The applicable warranty period, installed parts and coverage must be recorded on the repair invoice or warranty document.</p>
+          <p className="mt-2">Azan Mobile Fix is operated by {LEGAL_BUSINESS_NAME}. The applicable warranty period, installed parts and coverage must be recorded on the fix invoice or warranty document.</p>
           <p className="mt-2">This commercial warranty is provided in addition to, and does not replace or reduce, mandatory rights available under UAE consumer protection law.</p>
         </div>
 
         <div className="space-y-6">
 
           <LegalCard
-            title="Screen Repairs"
+            title="Screen Fixes"
             icon={<Smartphone size={22} />}
           >
             <p>
@@ -52,7 +52,7 @@ export default function WarrantyPage() {
           </LegalCard>
 
           <LegalCard
-            title="Charging Port Repairs"
+            title="Charging Port Fixes"
             icon={<PlugZap size={22} />}
           >
             <p>
@@ -62,7 +62,7 @@ export default function WarrantyPage() {
           </LegalCard>
 
           <LegalCard
-            title="Motherboard Repairs"
+            title="Motherboard Fixes"
             icon={<Cpu size={22} />}
           >
             <p>
@@ -78,7 +78,7 @@ export default function WarrantyPage() {
             <ul className="list-disc pl-5 space-y-2">
               <li>Physical damage.</li>
               <li>Water damage.</li>
-              <li>Unauthorized repairs.</li>
+              <li>Unauthorized fixes.</li>
               <li>Accidental damage.</li>
             </ul>
           </LegalCard>
@@ -88,7 +88,7 @@ export default function WarrantyPage() {
             icon={<ShieldCheck size={22} />}
           >
             <p>
-              Customers should provide the original or electronic repair invoice when requesting warranty service. We will inspect the device and explain the available warranty or statutory remedy.
+              Customers should provide the original or electronic fix invoice when requesting warranty service. We will inspect the device and explain the available warranty or statutory remedy.
             </p>
           </LegalCard>
 

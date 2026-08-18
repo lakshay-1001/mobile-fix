@@ -19,7 +19,7 @@ export default function TermsPage() {
     <WebsiteLayout>
       <SEO
         title="Terms of Service"
-        description="Review the repair service terms, estimates, payment conditions and customer responsibilities for Azan Mobile Fix in Dubai."
+        description="Review the fix service terms, estimates, payment conditions and customer responsibilities for Azan Mobile Fix in Dubai."
         path="/terms"
       />
       <LegalPageLayout title="Terms of Service">
@@ -91,7 +91,7 @@ export default function TermsPage() {
           >
             Azan Mobile Fix, operated by {LEGAL_BUSINESS_NAME}, is committed to
             providing transparent pricing,
-            professional repair services,
+            professional fix services,
             clear information about replacement parts,
             and outstanding customer support
             in Dubai.
@@ -101,23 +101,23 @@ export default function TermsPage() {
         <div className="space-y-6">
 
           <LegalCard
-            title="Repair Services"
+            title="Fix Services"
             icon={<Wrench size={22} />}
           >
             <p>
-              Azan Mobile Fix provides repair
+              Azan Mobile Fix provides fix
               services for smartphones,
               tablets, laptops, MacBooks,
               gaming devices and accessories.
             </p>
 
             <p>
-              Repair availability is confirmed for each request. Unless otherwise agreed in writing, customers should bring devices to our Bur Dubai shop.
+              Fix availability is confirmed for each request. Unless otherwise agreed in writing, customers should bring devices to our Bur Dubai shop.
             </p>
           </LegalCard>
 
           <LegalCard
-            title="Repair Estimates"
+            title="Fix Estimates"
             icon={<ShieldCheck size={22} />}
           >
             <p>
@@ -128,7 +128,7 @@ export default function TermsPage() {
 
             <p>
               Additional faults discovered
-              during repair may require further
+              during fix may require further
               approval before work continues.
             </p>
           </LegalCard>
@@ -139,7 +139,7 @@ export default function TermsPage() {
           >
             <ul className="list-disc pl-5 space-y-3">
               <li>
-                Backup all important data before repair.
+                Backup all important data before fix.
               </li>
 
               <li>
@@ -162,7 +162,7 @@ export default function TermsPage() {
           >
             <p>
               Payment is due immediately upon
-              successful completion of repair
+              successful completion of fix
               services.
             </p>
 
@@ -180,7 +180,7 @@ export default function TermsPage() {
             </p>
 
             <p>
-              Customers should back up their data and remove passwords where reasonably possible before repair. This precaution does not remove rights that apply under UAE law.
+              Customers should back up their data and remove passwords where reasonably possible before fix. This precaution does not remove rights that apply under UAE law.
             </p>
           </LegalCard>
 

@@ -231,7 +231,7 @@ export default function DashboardPage() {
             </h1>
 
             <p className="text-gray-500 text-sm mt-1">
-              Repair Management
+              Device Service Management
             </p>
           </div>
 

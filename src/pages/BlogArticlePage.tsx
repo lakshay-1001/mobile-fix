@@ -5,7 +5,7 @@ import Breadcrumbs from "../components/seo/Breadcrumbs";
 import SEO from "../components/seo/SEO";
 import { createArticleSchema, createBreadcrumbSchema } from "../components/seo/schema";
 import { getWhatsAppUrl, HAS_WHATSAPP } from "../config/site";
-import { getRepairGuide, getRepairService } from "../data/seoContent";
+import { getServiceGuide, getService } from "../data/seoContent";
 import NotFoundPage from "./NotFoundPage";
 import { trackEvent } from "../config/analytics";
 
@@ -19,7 +19,7 @@ function formatDate(date: string) {
 
 export default function BlogArticlePage() {
   const { slug } = useParams();
-  const guide = getRepairGuide(slug);
+  const guide = getServiceGuide(slug);
 
   if (!guide) return <NotFoundPage />;
 
@@ -28,7 +28,7 @@ export default function BlogArticlePage() {
     createArticleSchema({ title: guide.title, description: guide.description, path, published: guide.published, modified: guide.modified }),
     createBreadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Repair guides", path: "/blog" },
+      { name: "Service guides", path: "/blog" },
       { name: guide.title, path },
     ]),
   ];
@@ -42,19 +42,19 @@ export default function BlogArticlePage() {
         type="article"
         publishedTime={guide.published}
         modifiedTime={guide.modified}
-        imageAlt={`${guide.title} – repair guide from Azan Mobile Fix`}
+        imageAlt={`${guide.title} – service guide from Azan Mobile Fix`}
         structuredData={schema}
       />
 
       <article className="bg-[#fffafd] px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[860px]">
-          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Repair guides", path: "/blog" }, { name: guide.title }]} />
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Service guides", path: "/blog" }, { name: guide.title }]} />
           <header>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7004f]">Device care guide</p>
             <h1 className="mt-3 text-4xl font-black leading-tight tracking-[-0.035em] text-[#171217] sm:text-5xl">{guide.title}</h1>
             <p className="mt-5 text-xl leading-8 text-[#5a4045]">{guide.excerpt}</p>
             <div className="mt-6 flex flex-wrap gap-4 border-y border-[#eadde5] py-4 text-sm font-semibold text-[#6f5963]">
-              <span>By Azan Mobile Fix Repair Team</span>
+              <span>By Azan Mobile Fix Support Team</span>
               <span className="inline-flex items-center gap-1.5"><CalendarDays size={15} aria-hidden="true" /> Updated <time dateTime={guide.modified}>{formatDate(guide.modified)}</time></span>
               <span className="inline-flex items-center gap-1.5"><Clock3 size={15} aria-hidden="true" /> {guide.readTime}</span>
             </div>
@@ -72,9 +72,9 @@ export default function BlogArticlePage() {
             ))}
           </div>
 
-          <aside className="mt-12 rounded-[26px] bg-gradient-to-r from-[#b7004f] to-[#8138b2] p-7 text-white sm:p-9" aria-label="Repair inquiry">
+          <aside className="mt-12 rounded-[26px] bg-gradient-to-r from-[#b7004f] to-[#8138b2] p-7 text-white sm:p-9" aria-label="Device inquiry">
             <h2 className="text-2xl font-black">Need help with your device?</h2>
-            <p className="mt-3 max-w-2xl leading-7 text-white/85">Send the model and symptoms for initial guidance. A final repair quotation may require physical inspection.</p>
+            <p className="mt-3 max-w-2xl leading-7 text-white/85">Send the model and symptoms for initial guidance. A final quotation may require physical inspection.</p>
             <a 
             onClick={() =>
               trackEvent("whatsapp_click", {
@@ -85,9 +85,9 @@ export default function BlogArticlePage() {
           </aside>
 
           <section className="mt-12" aria-labelledby="related-services-heading">
-            <h2 id="related-services-heading" className="text-2xl font-black">Related repair services</h2>
+            <h2 id="related-services-heading" className="text-2xl font-black">Related fix services</h2>
             <div className="mt-5 flex flex-wrap gap-3">
-              {guide.relatedServiceSlugs.map(getRepairService).filter((service) => service !== undefined).map((service) => <Link key={service.slug} to={`/services/${service.slug}`} className="rounded-full border border-[#b7004f]/25 bg-white px-5 py-3 font-semibold text-[#b7004f] hover:bg-pink-50">{service.name}</Link>)}
+              {guide.relatedServiceSlugs.map(getService).filter((service) => service !== undefined).map((service) => <Link key={service.slug} to={`/services/${service.slug}`} className="rounded-full border border-[#b7004f]/25 bg-white px-5 py-3 font-semibold text-[#b7004f] hover:bg-pink-50">{service.name}</Link>)}
             </div>
           </section>
 

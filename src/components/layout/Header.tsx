@@ -13,10 +13,8 @@ import { trackEvent } from "../../config/analytics";
 
 const navItems = [
   { label: "Services", href: "/services" },
-  // { label: "How it works", href: "/#how-it-works" },
-  // { label: "Why us", href: "/#why-us" },
-  // { label: "FAQs", href: "/#faqs" },
-  { label: "Our shop", href: "/locations" },
+  { label: "Shop", href: "/shop" },
+  { label: "Our store", href: "/locations" },
   { label: "About", href: "/about" },
   { label: "Guides", href: "/blog" },
   { label: "Contact", href: "/contact" },

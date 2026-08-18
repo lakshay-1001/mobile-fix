@@ -7,6 +7,7 @@ const TermsPage = lazy(() => import("../pages/TermsPage"));
 const PrivacyPage = lazy(() => import("../pages/PrivacyPage"));
 const WarrantyPage = lazy(() => import("../pages/WarrantyPage"));
 const StoreLocatorPage = lazy(() => import("../pages/StoreLocatorPage"));
+const ShopPage = lazy(() => import("../pages/ShopPage"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
 const ContactPage = lazy(() => import("../pages/ContactPage"));
 const ServicesIndexPage = lazy(() => import("../pages/ServicesIndexPage"));
@@ -43,6 +44,7 @@ export default function AppRoutes() {
       <Route path="/privacy" element={<SuspendedPage><PrivacyPage /></SuspendedPage>} />
       <Route path="/warranty" element={<SuspendedPage><WarrantyPage /></SuspendedPage>} />
       <Route path="/locations" element={<SuspendedPage><StoreLocatorPage /></SuspendedPage>} />
+      <Route path="/shop" element={<SuspendedPage><ShopPage /></SuspendedPage>} />
       <Route path="/about" element={<SuspendedPage><AboutPage /></SuspendedPage>} />
       <Route path="/contact" element={<SuspendedPage><ContactPage /></SuspendedPage>} />
       <Route path="/services" element={<SuspendedPage><ServicesIndexPage /></SuspendedPage>} />

@@ -1,4 +1,4 @@
-export interface RepairServicePage {
+export interface ServicePage {
   slug: string;
   name: string;
   title: string;
@@ -17,7 +17,7 @@ export interface GuideSection {
   bullets?: string[];
 }
 
-export interface RepairGuide {
+export interface ServiceGuide {
   slug: string;
   title: string;
   description: string;
@@ -29,7 +29,7 @@ export interface RepairGuide {
   relatedServiceSlugs: string[];
 }
 
-export const repairServicePages: RepairServicePage[] = [
+export const servicePages: ServicePage[] = [
   {
     slug: "iphone-fix-dubai",
     name: "iPhone Fix",
@@ -38,7 +38,7 @@ export const repairServicePages: RepairServicePage[] = [
       "iPhone screen, battery, charging and fault diagnosis in Dubai. Visit Azan Mobile Fix in Bur Dubai or ask about a doorstep appointment.",
     summary: "Screen, battery, charging and diagnostic support for a wide range of iPhone models.",
     intro:
-      "A cracked display, weak battery or unreliable charging port can quickly interrupt work and daily communication. Our Bur Dubai team assesses the device first, explains the available repair option and confirms the quotation before work begins.",
+      "A cracked display, weak battery or unreliable charging port can quickly interrupt work and daily communication. Our Bur Dubai team assesses the device first, explains the available fix options and confirms the quotation before work begins.",
     issues: [
       "Cracked, unresponsive or discoloured iPhone screens",
       "Battery drain, unexpected shutdowns or charging problems",
@@ -63,10 +63,10 @@ export const repairServicePages: RepairServicePage[] = [
     name: "Samsung Phone Fix",
     title: "Samsung Phone Fix in Dubai",
     description:
-      "Samsung Galaxy screen, battery, charging and camera fix inquiries in Dubai. Get an assessment from our mobile repair shop in Bur Dubai.",
+      "Samsung Galaxy screen, battery, charging and camera fix inquiries in Dubai. Get an assessment from our mobile fix shop in Bur Dubai.",
     summary: "Fix assessment for Samsung Galaxy screens, batteries, charging ports, cameras and common faults.",
     intro:
-      "Samsung Galaxy devices vary by model and region, so the correct model number matters when checking parts and repair options. Send us the model and symptoms, or visit the shop for an inspection and clear quotation.",
+      "Samsung Galaxy devices vary by model and region, so the correct model number matters when checking parts and fix options. Send us the model and symptoms, or visit the shop for an inspection and clear quotation.",
     issues: [
       "Cracked glass, display lines, black screens or touch faults",
       "Battery drain, swelling symptoms or unexpected shutdowns",
@@ -76,12 +76,12 @@ export const repairServicePages: RepairServicePage[] = [
     process: [
       { title: "Confirm the Galaxy model", description: "Share the model name or model number so compatible options can be checked." },
       { title: "Describe the symptoms", description: "Tell us what works, what fails and whether the phone was dropped or exposed to liquid." },
-      { title: "Review the quotation", description: "Parts, timing and warranty terms are confirmed before you approve the repair." },
-      { title: "Functional testing", description: "The repaired function is checked before the device is returned." },
+      { title: "Review the quotation", description: "Parts, timing and warranty terms are confirmed before you approve the fix." },
+      { title: "Functional testing", description: "The fixed function is checked before the device is returned." },
     ],
     faqs: [
       { question: "Which Samsung phones can you assess?", answer: "We accept inquiries for many Samsung Galaxy models. Availability depends on the exact model, fault and compatible parts, which we confirm before booking." },
-      { question: "Can a Samsung phone with display lines be repaired?", answer: "Display lines can follow impact or internal display failure. An inspection is needed to distinguish a screen fault from connector or board damage." },
+      { question: "Can a Samsung phone with display lines be fixed?", answer: "Display lines can follow impact or internal display failure. An inspection is needed to distinguish a screen fault from connector or board damage." },
       { question: "Can I ask for a quote on WhatsApp?", answer: "Yes. Send the model, a short description and clear photos of visible damage. A final quotation may still require physical inspection." },
     ],
     relatedGuideSlugs: ["what-to-do-after-phone-screen-cracks", "phone-not-charging-causes"],
@@ -200,13 +200,13 @@ export const repairServicePages: RepairServicePage[] = [
   },
 ];
 
-export const repairGuides: RepairGuide[] = [
+export const serviceGuides: ServiceGuide[] = [
   {
     slug: "what-to-do-after-phone-screen-cracks",
     title: "What to Do After Your Phone Screen Cracks",
     description:
       "A practical checklist for protecting your phone, data and fingers after a cracked screen, plus signs that the device needs prompt inspection.",
-    excerpt: "Protect the display, check the device safely and avoid actions that can turn a small crack into a larger repair.",
+    excerpt: "Protect the display, check the device safely and avoid actions that can turn a small crack into a larger fix.",
     published: "2026-08-03",
     modified: "2026-08-03",
     readTime: "5 min read",
@@ -236,9 +236,9 @@ export const repairGuides: RepairGuide[] = [
       {
         heading: "Information to send when requesting a quote",
         paragraphs: [
-          "Provide the exact phone model, whether the image and touch still work, and a clear photo taken with another device. Mention any bending, liquid exposure or previous repair. This helps a shop check likely parts, but a final quote may still require physical inspection.",
+          "Provide the exact phone model, whether the image and touch still work, and a clear photo taken with another device. Mention any bending, liquid exposure or previous fix. This helps a shop check likely parts, but a final quote may still require physical inspection.",
         ],
-        bullets: ["Exact model or model number", "Photo of the front and damaged corner", "Touch and display condition", "Any prior repair or liquid exposure"],
+        bullets: ["Exact model or model number", "Photo of the front and damaged corner", "Touch and display condition", "Any prior fix or liquid exposure"],
       },
     ],
     relatedServiceSlugs: ["iphone-fix-dubai", "samsung-phone-fix-dubai", "mobile-phone-fix-bur-dubai"],
@@ -353,15 +353,15 @@ export const repairGuides: RepairGuide[] = [
         heading: "Clarify the part and warranty option",
         paragraphs: [
           "Words such as original, OEM and compatible can be used inconsistently. Ask exactly which part option is being offered for your model and how it may differ in display quality, battery reporting or manufacturer features.",
-          "Request written warranty terms. Check the duration, the repaired component covered, exclusions for impact or liquid damage and the process for making a claim.",
+          "Request written warranty terms. Check the duration, the fixed component covered, exclusions for impact or liquid damage and the process for making a claim.",
         ],
-        bullets: ["Exact part option", "Total price before work", "Expected completion window", "Written repair warranty and exclusions"],
+        bullets: ["Exact part option", "Total price before work", "Expected completion window", "Written fix warranty and exclusions"],
       },
       {
         heading: "Protect accounts and personal data",
         paragraphs: [
-          "Back up important data and remove payment cards or sensitive removable storage when practical. You generally should not need to share personal account passwords for a hardware repair. If functional testing requires device access, ask what access is needed and use a temporary method or repair mode when available.",
-          "Before leaving, test the repaired function and basic features such as charging, touch, sound and cameras where relevant. Keep the receipt and warranty information.",
+          "Back up important data and remove payment cards or sensitive removable storage when practical. You generally should not need to share personal account passwords for a hardware fix. If functional testing requires device access, ask what access is needed and use a temporary method or repair mode when available.",
+          "Before leaving, test the fixed function and basic features such as charging, touch, sound and cameras where relevant. Keep the receipt and warranty information.",
         ],
       },
     ],
@@ -369,10 +369,16 @@ export const repairGuides: RepairGuide[] = [
   },
 ];
 
-export function getRepairService(slug?: string) {
-  return repairServicePages.find((service) => service.slug === slug);
+export function getService(slug?: string) {
+  return servicePages.find((service) => service.slug === slug);
 }
 
-export function getRepairGuide(slug?: string) {
-  return repairGuides.find((guide) => guide.slug === slug);
+export function getServiceGuide(slug?: string) {
+  return serviceGuides.find((guide) => guide.slug === slug);
 }
+
+// Legacy exports for backward compatibility
+export const repairServicePages = servicePages;
+export const repairGuides = serviceGuides;
+export const getRepairService = getService;
+export const getRepairGuide = getServiceGuide;

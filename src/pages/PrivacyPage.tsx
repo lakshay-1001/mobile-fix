@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <WebsiteLayout>
       <SEO
         title="Privacy Policy"
-        description="Learn what information Azan Mobile Fix collects through inquiries, reviews and repair services, and how to make a privacy request."
+        description="Learn what information Azan Mobile Fix collects through inquiries, reviews and fix services, and how to make a privacy request."
         path="/privacy"
       />
       <LegalPageLayout title="Privacy Policy">
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             <ul className="list-disc space-y-2 pl-5">
               <li>Contact inquiries: name, email address, optional phone number, device/model, inquiry type and message.</li>
               <li>Customer reviews: displayed name, rating, review text, moderation status and submission date.</li>
-              <li>Repair interactions: contact details, device details, reported fault, quotation, repair history, parts, warranty and invoice information where applicable.</li>
+              <li>Fix interactions: contact details, device details, reported fault, quotation, fix history, parts, warranty and invoice information where applicable.</li>
               <li>Technical information created by our hosting, security and communications providers, such as timestamps, IP address and basic request information.</li>
             </ul>
             <p>Please do not submit device passwords, payment-card details, sensitive files or unrelated personal information through website forms.</p>
@@ -40,8 +40,8 @@ export default function PrivacyPage() {
 
           <LegalCard title="Why We Use Information" icon={<Eye size={22} />}>
             <ul className="list-disc space-y-2 pl-5">
-              <li>Respond to inquiries and take steps requested before a repair.</li>
-              <li>Prepare quotations, provide repair updates and manage warranties or complaints.</li>
+              <li>Respond to inquiries and take steps requested before a fix.</li>
+              <li>Prepare quotations, provide fix updates and manage warranties or complaints.</li>
               <li>Moderate and, where authorised, publish customer reviews.</li>
               <li>Protect the website and forms from misuse and maintain business records required by law.</li>
             </ul>
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           </LegalCard>
 
           <LegalCard title="Retention and Security" icon={<Lock size={22} />}>
-            <p>Information is retained only for as long as reasonably needed for the inquiry, repair, warranty, dispute, legal or accounting purpose for which it was collected. Different records may have different legally required retention periods.</p>
+            <p>Information is retained only for as long as reasonably needed for the inquiry, fix, warranty, dispute, legal or accounting purpose for which it was collected. Different records may have different legally required retention periods.</p>
             <p>We use access controls, HTTPS, account protection, moderation and service-provider safeguards. No internet transmission or storage system can be guaranteed completely secure.</p>
           </LegalCard>
 

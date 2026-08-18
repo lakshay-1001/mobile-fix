@@ -5,22 +5,22 @@ import Breadcrumbs from "../components/seo/Breadcrumbs";
 import SEO from "../components/seo/SEO";
 import { createBreadcrumbSchema, localBusinessSchema } from "../components/seo/schema";
 import { getSiteUrl } from "../config/site";
-import { repairServicePages } from "../data/seoContent";
+import { servicePages } from "../data/seoContent";
 
 const servicesIndexSchema = [
   localBusinessSchema,
   createBreadcrumbSchema([
     { name: "Home", path: "/" },
-    { name: "Repair services", path: "/services" },
+    { name: "Device Services", path: "/services" },
   ]),
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Device Repair Services in Dubai",
+    name: "Device Fix Services in Dubai",
     url: getSiteUrl("/services"),
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: repairServicePages.map((service, index) => ({
+      itemListElement: servicePages.map((service, index) => ({
         "@type": "ListItem",
         position: index + 1,
         name: service.title,
@@ -34,18 +34,18 @@ export default function ServicesIndexPage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="Phone, Tablet and Laptop Repair Dubai"
-        description="Explore iPhone, Samsung, mobile phone, iPad, tablet, MacBook and laptop repair services from Azan Mobile Fix in Bur Dubai."
+        title="Phone, Tablet and Laptop Fix Services Dubai"
+        description="Explore iPhone, Samsung, mobile phone, iPad, tablet, MacBook and laptop fix services from Azan Mobile Fix in Bur Dubai."
         path="/services"
         structuredData={servicesIndexSchema}
       />
 
       <section className="bg-[#fffafd] px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto max-w-[1180px]">
-          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Repair services" }]} />
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7004f]">Dubai device repair</p>
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Device Services" }]} />
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7004f]">Dubai device fix services</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.035em] text-[#171217] sm:text-5xl">
-            Phone, tablet and laptop repair services
+            Phone, tablet and laptop fix services
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#5a4045]">
             Start with the service that matches your device. We confirm the fault, parts availability,
@@ -53,7 +53,7 @@ export default function ServicesIndexPage() {
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {repairServicePages.map((service) => (
+            {servicePages.map((service) => (
               <article key={service.slug} className="flex h-full flex-col rounded-[24px] border border-[#eadde5] bg-white p-7 shadow-[0_14px_40px_rgba(67,35,52,0.06)]">
                 <Wrench className="text-[#b7004f]" size={25} aria-hidden="true" />
                 <h2 className="mt-4 text-2xl font-black text-[#171217]">{service.title}</h2>
@@ -72,7 +72,7 @@ export default function ServicesIndexPage() {
             </div>
             <div className="flex gap-4">
               <ShieldCheck className="mt-1 shrink-0 text-pink-300" aria-hidden="true" />
-              <div><h2 className="font-black">Approval before repair</h2><p className="mt-2 leading-7 text-white/75">The proposed work and warranty terms are explained before service begins.</p></div>
+              <div><h2 className="font-black">Approval before fix</h2><p className="mt-2 leading-7 text-white/75">The proposed work and warranty terms are explained before service begins.</p></div>
             </div>
           </div>
         </div>
