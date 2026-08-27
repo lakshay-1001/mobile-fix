@@ -1,12 +1,12 @@
 declare global {
   interface Window {
-    dataLayer: Record<string, any>[];
+    dataLayer: Record<string, unknown>[];
   }
 }
 
 export const trackEvent = (
   eventName: string,
-  params: Record<string, any> = {}
+  params: Record<string, unknown> = {}
 ) => {
 //   console.log("TRACK EVENT:", eventName, params);
 

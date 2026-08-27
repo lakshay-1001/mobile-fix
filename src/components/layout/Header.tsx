@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-9 z-50 border-b border-[#eadde5] bg-white/95 shadow-sm backdrop-blur-xl sm:top-10">
+      <header className="fixed left-0 right-0 top-9 z-50 border-b border-[#eadde5] bg-white/95 shadow-[0_8px_30px_rgba(43,28,36,0.07)] backdrop-blur-xl sm:top-10">
         <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 md:px-8">
           <Link
             to="/"
@@ -65,7 +65,7 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-4 xl:flex">
+          <nav aria-label="Primary navigation" className="hidden items-center justify-center gap-5 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -128,7 +128,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-3 right-3 top-[108px] z-40 overflow-hidden rounded-2xl border border-[#eadde5] bg-white shadow-2xl sm:top-[120px] xl:hidden"
+            className="fixed left-3 right-3 top-[108px] z-40 max-h-[calc(100svh-124px)] overflow-y-auto rounded-2xl border border-[#eadde5] bg-white shadow-2xl sm:top-[120px] xl:hidden"
           >
             <div className="flex flex-col p-2">
               {navItems.map((item) => (

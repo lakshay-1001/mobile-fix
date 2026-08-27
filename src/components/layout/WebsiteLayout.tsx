@@ -39,7 +39,7 @@ export default function WebsiteLayout({
 
       <Header />
 
-      <main id="main-content" className="pt-[100px] sm:pt-[112px]">
+      <main id="main-content" className="pt-[104px] sm:pt-[122px]">
         {children}
       </main>
 
