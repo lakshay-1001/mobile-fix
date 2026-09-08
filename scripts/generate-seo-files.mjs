@@ -81,7 +81,7 @@ const environment = await readEnvironment();
 const configuredSiteUrl = (environment.VITE_SITE_URL || "").trim().replace(/\/$/, "");
 const siteUrl = /^https:\/\//i.test(configuredSiteUrl) && !/YOUR-DOMAIN|localhost/i.test(configuredSiteUrl)
   ? configuredSiteUrl
-  : "";
+  : "https://azanmobilefix.com";
 
 for (const route of routes) {
   const html = replaceMeta(baseHtml, route, siteUrl);

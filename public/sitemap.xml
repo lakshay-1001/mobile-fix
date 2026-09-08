@@ -1,59 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://azanmobilefix.com/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/about</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/services</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/contact</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/locations</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/warranty</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/privacy</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/terms</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <url>
-        <loc>https://azanmobilefix.com/blog</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://azanmobilefix.com/</loc></url>
+  <url><loc>https://azanmobilefix.com/services</loc></url>
+  <url><loc>https://azanmobilefix.com/services/iphone-fix-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/services/samsung-phone-fix-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/services/mobile-phone-fix-bur-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/services/ipad-tablet-fix-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/services/macbook-laptop-fix-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/blog</loc></url>
+  <url><loc>https://azanmobilefix.com/blog/what-to-do-after-phone-screen-cracks</loc></url>
+  <url><loc>https://azanmobilefix.com/blog/iphone-battery-replacement-signs</loc></url>
+  <url><loc>https://azanmobilefix.com/blog/phone-not-charging-causes</loc></url>
+  <url><loc>https://azanmobilefix.com/blog/choose-mobile-fix-shop-dubai</loc></url>
+  <url><loc>https://azanmobilefix.com/locations</loc></url>
+  <url><loc>https://azanmobilefix.com/shop</loc></url>
+  <url><loc>https://azanmobilefix.com/about</loc></url>
+  <url><loc>https://azanmobilefix.com/contact</loc></url>
+  <url><loc>https://azanmobilefix.com/warranty</loc></url>
+  <url><loc>https://azanmobilefix.com/terms</loc></url>
+  <url><loc>https://azanmobilefix.com/privacy</loc></url>
 </urlset>

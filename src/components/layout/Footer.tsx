@@ -225,12 +225,7 @@ export default function Footer() {
                   <Phone size={18} aria-hidden="true" />
                   {HAS_PUBLIC_PHONE ? PHONE_DISPLAY : "Call the shop"}
                 </a>
-              ) : (
-                <p className="inline-flex min-h-10 items-center gap-3">
-                  <Phone size={18} aria-hidden="true" />
-                  Phone: {PHONE_DISPLAY}
-                </p>
-              )}
+              ) : null}
 
               <a
                 href={getWhatsAppUrl()}

@@ -5,7 +5,8 @@ import Breadcrumbs from "../components/seo/Breadcrumbs";
 import SEO from "../components/seo/SEO";
 import ProductCard from "../components/cards/ProductCard";
 import { products, type Product } from "../data/products";
-import { getWhatsAppUrl, HAS_WHATSAPP, SHOP_ADDRESS, OPENING_HOURS_DISPLAY, PHONE_DISPLAY, PHONE_LINK } from "../config/site";
+import { getWhatsAppUrl, HAS_WHATSAPP, HAS_PUBLIC_PHONE, SHOP_ADDRESS, OPENING_HOURS_DISPLAY, PHONE_DISPLAY, PHONE_LINK } from "../config/site";
+import { getSiteUrl } from "../config/site";
 import { trackEvent } from "../config/analytics";
 
 export default function ShopPage() {
@@ -38,7 +39,7 @@ export default function ShopPage() {
             "@type": "Store",
             name: "Azan Mobile Fix Shop",
             description: "Mobile phones, laptops, accessories and devices shop in Dubai",
-            url: "https://azanmobilefix.com/shop",
+            url: getSiteUrl("/shop"),
             address: {
               "@type": "PostalAddress",
               streetAddress: SHOP_ADDRESS,
@@ -136,13 +137,17 @@ export default function ShopPage() {
             <div className="rounded-[24px] border-2 border-[#eadde5] bg-[#fffafd] p-8 text-center">
               <Phone size={32} className="mx-auto text-[#6f5963] mb-4" />
               <h3 className="text-xl font-black text-[#171217]">Contact Us</h3>
-              <a
-                href={PHONE_LINK}
-                onClick={() => trackEvent("phone_call", { location: "store_info_section" })}
-                className="mt-4 inline-block text-lg font-bold text-[#b7004f] hover:underline"
-              >
-                {PHONE_DISPLAY}
-              </a>
+              {HAS_PUBLIC_PHONE ? (
+                <a
+                  href={PHONE_LINK}
+                  onClick={() => trackEvent("phone_call", { location: "store_info_section" })}
+                  className="mt-4 inline-block text-lg font-bold text-[#b7004f] hover:underline"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              ) : (
+                <p className="mt-4 text-sm text-[#6f5963]">Message us for product availability</p>
+              )}
               <p className="mt-2 text-sm text-[#6f5963]">Call for product availability</p>
             </div>
           </div>
@@ -164,14 +169,16 @@ export default function ShopPage() {
                 <MessageCircle size={18} />
                 Message on WhatsApp
               </a>
-              <a
-                href={PHONE_LINK}
-                onClick={() => trackEvent("phone_cta", { location: "shop_page_cta" })}
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-7 py-3 font-bold text-white hover:bg-white/10 transition-colors"
-              >
-                <Phone size={18} />
-                Call Us
-              </a>
+              {HAS_PUBLIC_PHONE && (
+                <a
+                  href={PHONE_LINK}
+                  onClick={() => trackEvent("phone_cta", { location: "shop_page_cta" })}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-7 py-3 font-bold text-white hover:bg-white/10 transition-colors"
+                >
+                  <Phone size={18} />
+                  Call Us
+                </a>
+              )}
             </div>
           </div>
         </div>
