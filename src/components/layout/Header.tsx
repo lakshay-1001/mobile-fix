@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -119,15 +118,10 @@ export default function Header() {
         </div>
       </header>
 
-      <AnimatePresence>
-        {open && (
-          <motion.nav
+      {open && (
+          <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2 }}
             className="fixed left-3 right-3 top-[108px] z-40 max-h-[calc(100svh-124px)] overflow-y-auto rounded-2xl border border-[#eadde5] bg-white shadow-2xl sm:top-[120px] xl:hidden"
           >
             <div className="flex flex-col p-2">
@@ -161,9 +155,8 @@ export default function Header() {
                 </a>
               </div>
             </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+          </nav>
+      )}
     </>
   );
 }

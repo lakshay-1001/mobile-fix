@@ -1,18 +1,7 @@
-import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Phone } from "lucide-react";
 import GradientText from "../common/GradientText";
 import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
 import { trackEvent } from "../../config/analytics";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
 
 export default function HeroSection() {
   return (
@@ -31,12 +20,7 @@ export default function HeroSection() {
         <div className="absolute right-[-100px] top-10 h-[420px] w-[420px] rounded-full bg-[#b7004f]/15 blur-[120px]" />
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10"
-      >
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10">
         <div className="max-w-[900px]">
           <p
             className="mb-7 inline-flex min-h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#d81b60] to-[#8138b2] px-5 text-[11px] font-bold uppercase tracking-[2px] text-white shadow-lg sm:px-7 sm:text-xs"
@@ -52,15 +36,12 @@ export default function HeroSection() {
             <GradientText className="block">At Your Door</GradientText>
           </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="max-w-[570px] text-[16px] font-medium leading-7 text-white lg:text-[#4f3b44] sm:text-lg sm:leading-8"
-          >
+          <p className="max-w-[570px] text-[16px] font-medium leading-7 text-white lg:text-[#4f3b44] sm:text-lg sm:leading-8">
             Get convenient smartphone, tablet and laptop fixes at your home or office.
             From cracked screens to battery problems, our technicians serve customers across Dubai.
-          </motion.p>
+          </p>
 
-          <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <a 
             onClick={() =>
               trackEvent("phone_click", {
@@ -79,13 +60,13 @@ export default function HeroSection() {
               href={getWhatsAppUrl()} target={HAS_WHATSAPP ? "_blank" : undefined} rel={HAS_WHATSAPP ? "noopener noreferrer" : undefined} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border border-[#b7004f]/30 bg-white/90 px-8 font-semibold text-[#4a3540] shadow-lg shadow-black/5 transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b7004f]">
               <MessageCircle size={20} aria-hidden="true" /> {HAS_WHATSAPP ? "WhatsApp Us" : "Send Inquiry"}
             </a>
-          </motion.div>
+          </div>
 
-          <motion.p variants={itemVariants} className="mt-5 text-sm font-semibold text-[#5a4045]">
+          <p className="mt-5 text-sm font-semibold text-[#5a4045]">
             Doorstep service <span aria-hidden="true">•</span> Open 7 days <span aria-hidden="true">•</span> Fix warranty
-          </motion.p>
+          </p>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

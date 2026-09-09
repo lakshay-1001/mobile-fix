@@ -1,9 +1,12 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 const root = process.cwd();
 const distDirectory = path.join(root, "dist");
+const ssrDirectory = path.join(root, ".ssr-build");
 const baseHtml = await readFile(path.join(distDirectory, "index.html"), "utf8");
+const { render } = await import(pathToFileURL(path.join(ssrDirectory, "entry-server.js")).href);
 
 const routes = [
   { path: "/", title: "Mobile Phone fix Dubai | Azan Mobile Fix", description: "Mobile phone, iPhone, Samsung, tablet and laptop fix services across Dubai from Azan Mobile Fix in Bur Dubai." },
@@ -84,7 +87,11 @@ const siteUrl = /^https:\/\//i.test(configuredSiteUrl) && !/YOUR-DOMAIN|localhos
   : "https://azanmobilefix.com";
 
 for (const route of routes) {
-  const html = replaceMeta(baseHtml, route, siteUrl);
+  const appHtml = await render(route.path);
+  const html = replaceMeta(baseHtml, route, siteUrl).replace(
+    '<div id="root"></div>',
+    `<div id="root">${appHtml}</div>`
+  );
   if (route.path === "/") {
     await writeFile(path.join(distDirectory, "index.html"), html);
     continue;
@@ -93,6 +100,8 @@ for (const route of routes) {
   await mkdir(routeDirectory, { recursive: true });
   await writeFile(path.join(routeDirectory, "index.html"), html);
 }
+
+await rm(ssrDirectory, { recursive: true, force: true });
 
 const baseRobots = "User-agent: *\nAllow: /\nDisallow: /admin\n";
 if (siteUrl) {
