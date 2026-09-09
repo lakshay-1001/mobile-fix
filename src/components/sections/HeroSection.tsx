@@ -2,7 +2,6 @@ import { motion, type Variants } from "framer-motion";
 import { MessageCircle, Phone } from "lucide-react";
 import GradientText from "../common/GradientText";
 import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
-import heroImage from "../../assets/images/hero.png";
 import { trackEvent } from "../../config/analytics";
 
 const containerVariants: Variants = {
@@ -19,11 +18,8 @@ export default function HeroSection() {
   return (
     <section className="relative flex min-h-[calc(100svh-100px)] items-center overflow-hidden py-14 sm:py-20 lg:min-h-[760px]">
       <div className="absolute inset-0">
-        <motion.img
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1.03 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          src={heroImage}
+        <img
+          src="/hero.webp"
           alt="Mobile phone opened for professional fix in Dubai"
           width="512"
           height="512"
@@ -42,21 +38,19 @@ export default function HeroSection() {
         className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10"
       >
         <div className="max-w-[900px]">
-          <motion.p
-            variants={itemVariants}
+          <p
             className="mb-7 inline-flex min-h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#d81b60] to-[#8138b2] px-5 text-[11px] font-bold uppercase tracking-[2px] text-white shadow-lg sm:px-7 sm:text-xs"
           >
             Doorstep fix across Dubai
-          </motion.p>
+          </p>
 
-          <motion.h1
-            variants={itemVariants}
+          <h1
             className="mb-6 text-[40px] font-black leading-[44px] tracking-[-0.04em] text-[#171217] sm:text-[58px] sm:leading-[62px] lg:text-[76px] lg:leading-[80px]"
           >
             Mobile Phone fix
             <span className="block">in Dubai</span>
             <GradientText className="block">At Your Door</GradientText>
-          </motion.h1>
+          </h1>
 
           <motion.p
             variants={itemVariants}

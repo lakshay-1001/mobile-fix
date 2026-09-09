@@ -142,15 +142,14 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {PHONE_DISPLAY && (
-                <div className="flex gap-3">
-                  <Mail className="mt-1 shrink-0 text-pink-300" size={21} aria-hidden="true" />
-                  <div className="min-w-0">
-                    <h2 className="font-bold">Public phone</h2>
-                    <p className="mt-1 text-white/80">{PHONE_DISPLAY}</p>
-                  </div>
+              <div className="flex gap-3">
+                <Mail className="mt-1 shrink-0 text-pink-300" size={21} aria-hidden="true" />
+                <div className="min-w-0">
+                  <h2 className="font-bold">Public phone</h2>
+                  <p className="mt-1 text-white/80">{PHONE_DISPLAY}</p>
+                  {/* <p className="mt-1 text-xs leading-5 text-white/60">The public call and WhatsApp number will be added after confirmation.</p> */}
                 </div>
-              )}
+              </div>
             </aside>
 
             <section aria-labelledby="contact-form-title" className="min-w-0 overflow-hidden rounded-[28px] border border-[#eadde5] bg-white p-6 shadow-[0_20px_60px_rgba(67,35,52,0.08)] sm:p-8">
