@@ -1,12 +1,10 @@
-﻿import { lazy, Suspense } from "react";
 import HeroSection from "../components/sections/HeroSection";
 import StatsSection from "../components/sections/StatsSection";
+import BelowFoldSections from "../components/sections/BelowFoldSections";
 import WebsiteLayout from "../components/layout/WebsiteLayout";
 import SEO from "../components/seo/SEO";
 import { localBusinessSchema } from "../components/seo/schema";
 import { faqs } from "../data/faq";
-
-const BelowFoldSections = lazy(() => import("../components/sections/BelowFoldSections"));
 
 const homeSchema = [
   localBusinessSchema,
@@ -25,15 +23,13 @@ export default function HomePage() {
   return (
     <WebsiteLayout>
       <SEO
-        title="Mobile Phone Services Dubai"
-        description="Mobile phone, iPhone, Samsung, tablet and laptop fixing services across Dubai from Azan Mobile Fix in Bur Dubai."
+        title="Mobile Phone Repair Dubai"
+        description="Mobile phone repair in Dubai for iPhone, Samsung, tablets and laptops. Visit our Bur Dubai shop or ask Azan Mobile Fix about doorstep service."
         structuredData={homeSchema}
       />
       <HeroSection />
       <StatsSection />
-      <Suspense fallback={<div className="min-h-[2400px]" aria-hidden="true" />}>
-        <BelowFoldSections />
-      </Suspense>
+      <BelowFoldSections />
     </WebsiteLayout>
   );
 }

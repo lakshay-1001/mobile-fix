@@ -22,7 +22,7 @@ const iphoneSolutions = [
   { label: "iPhone Battery Replacement", to: "/contact" },
   { label: "iPhone Camera Replacement", to: "/contact" },
   { label: "Fix Guidelines", to: "/warranty" },
-  { label: "FAQs", to: "/faq" },
+  { label: "FAQs", to: "/#faqs" },
   { label: "Book a Fix", to: "/contact" },
 ];
 

@@ -17,7 +17,7 @@ export default function HeroSection() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-white/30 sm:bg-gradient-to-r sm:from-[#f9f9f9] sm:via-[#f9f9f9]/20 sm:via-55% sm:to-[#f9f9f9]/15" />
-        <div className="absolute right-[-100px] top-10 h-[420px] w-[420px] rounded-full bg-[#b7004f]/15 blur-[120px]" />
+        <div className="absolute right-[-100px] top-10 hidden h-[420px] w-[420px] rounded-full bg-[#b7004f]/15 blur-[120px] sm:block" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10">

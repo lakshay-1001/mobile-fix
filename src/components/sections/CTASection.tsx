@@ -1,5 +1,4 @@
 ﻿import Container from "../common/Container";
-import { motion } from "framer-motion";
 import { MessageCircle, Phone } from "lucide-react";
 import { getWhatsAppUrl, HAS_CONTACT_PHONE, HAS_WHATSAPP, PHONE_LINK } from "../../config/site";
 import { trackEvent } from "../../config/analytics";
@@ -8,11 +7,7 @@ export default function CTASection() {
   return (
     <section className="py-14 md:py-24">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="
             relative
             overflow-hidden
@@ -201,7 +196,7 @@ export default function CTASection() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

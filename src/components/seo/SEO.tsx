@@ -50,7 +50,9 @@ export default function SEO({
     upsertMeta('meta[name="description"]', { name: "description", content: description });
     upsertMeta('meta[name="robots"]', {
       name: "robots",
-      content: noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large",
+      content: noIndex
+        ? "noindex, nofollow"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     });
     upsertMeta('meta[property="og:title"]', { property: "og:title", content: fullTitle });
     upsertMeta('meta[property="og:description"]', { property: "og:description", content: description });
@@ -60,6 +62,8 @@ export default function SEO({
     upsertMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl });
     upsertMeta('meta[property="og:image"]', { property: "og:image", content: imageUrl });
     upsertMeta('meta[property="og:image:alt"]', { property: "og:image:alt", content: imageAlt });
+    upsertMeta('meta[property="og:image:width"]', { property: "og:image:width", content: "512" });
+    upsertMeta('meta[property="og:image:height"]', { property: "og:image:height", content: "512" });
     upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
     upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: fullTitle });
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: description });
@@ -92,17 +96,17 @@ export default function SEO({
     }
     canonical.href = canonicalUrl;
 
-    document.head.querySelectorAll('script[data-site-schema="true"]').forEach((node) => node.remove());
-    if (structuredData && !noIndex) {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.dataset.siteSchema = "true";
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-    }
-
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [description, image, imageAlt, modifiedTime, noIndex, path, publishedTime, structuredData, title, type]);
 
-  return null;
+  if (!structuredData || noIndex) return null;
+
+  const serializedStructuredData = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
+  return (
+    <script
+      type="application/ld+json"
+      data-site-schema="true"
+      dangerouslySetInnerHTML={{ __html: serializedStructuredData }}
+    />
+  );
 }

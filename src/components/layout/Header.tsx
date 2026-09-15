@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed left-0 right-0 top-9 z-50 border-b border-[#eadde5] bg-white/95 shadow-[0_8px_30px_rgba(43,28,36,0.07)] backdrop-blur-xl sm:top-10">
+      <header className="fixed left-0 right-0 top-9 z-50 border-b border-[#eadde5] bg-white/95 shadow-[0_8px_30px_rgba(43,28,36,0.07)] sm:top-10 sm:backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 md:px-8">
           <Link
             to="/"

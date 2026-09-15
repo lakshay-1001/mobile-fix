@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-AE">
   <head>
-    <!-- Queue analytics immediately, but download third-party scripts after the page is usable. -->
+    <!-- Queue analytics immediately, but download third-party scripts only when the page is idle. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -10,15 +10,10 @@
 
       (function () {
         var loaded = false;
-        var events = ['pointerdown', 'keydown', 'touchstart'];
 
         function loadAnalytics() {
           if (loaded) return;
           loaded = true;
-          events.forEach(function (eventName) {
-            window.removeEventListener(eventName, loadAnalytics);
-          });
-
           var googleTag = document.createElement('script');
           googleTag.async = true;
           googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18379478974';
@@ -31,15 +26,11 @@
           document.head.appendChild(tagManager);
         }
 
-        events.forEach(function (eventName) {
-          window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
-        });
-
         window.addEventListener('load', function () {
           if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
+            window.requestIdleCallback(loadAnalytics, { timeout: 4000 });
           } else {
-            window.setTimeout(loadAnalytics, 1000);
+            window.setTimeout(loadAnalytics, 3000);
           }
         }, { once: true });
       })();
@@ -63,7 +54,7 @@
       name="description"
       content="Mobile phone, iPhone, Samsung, tablet and laptop fix services across Dubai from Azan Mobile Fix in Bur Dubai."
     />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <meta property="og:title" content="Mobile Phone Fix Dubai | Azan Mobile Fix" />
     <meta
@@ -75,6 +66,8 @@
     <meta property="og:site_name" content="Azan Mobile Fix" />
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:image:alt" content="Azan Mobile Fix mobile services in Dubai" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Mobile Phone Fix Dubai | Azan Mobile Fix" />

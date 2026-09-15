@@ -1,44 +1,25 @@
 import React from "react";
-import { Writable } from "node:stream";
-import { renderToPipeableStream } from "react-dom/server";
+import { prerenderToNodeStream } from "react-dom/static";
 import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 
-export function render(url: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    let html = "";
-    let didError = false;
-
-    const destination = new Writable({
-      write(chunk, _encoding, callback) {
-        html += chunk.toString();
-        callback();
+export async function render(url: string): Promise<string> {
+  const { prelude } = await prerenderToNodeStream(
+    <React.StrictMode>
+      <MemoryRouter initialEntries={[url]}>
+        <App />
+      </MemoryRouter>
+    </React.StrictMode>,
+    {
+      onError(error) {
+        console.error(`Static rendering failed for ${url}:`, error);
       },
-    });
+    }
+  );
 
-    destination.on("finish", () => {
-      if (didError) {
-        reject(new Error(`Server rendering failed for ${url}`));
-        return;
-      }
-      resolve(html);
-    });
-
-    const stream = renderToPipeableStream(
-      <React.StrictMode>
-        <MemoryRouter initialEntries={[url]}>
-          <App />
-        </MemoryRouter>
-      </React.StrictMode>,
-      {
-        onAllReady() {
-          stream.pipe(destination);
-        },
-        onError(error) {
-          didError = true;
-          console.error(error);
-        },
-      }
-    );
-  });
+  let html = "";
+  for await (const chunk of prelude) {
+    html += chunk.toString();
+  }
+  return html;
 }

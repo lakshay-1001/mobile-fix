@@ -151,5 +151,11 @@ img, svg {
 }
 
 .animate-gradient {
-  animation: gradientMove 8s ease infinite;
+  background-position: 0% 50%;
+}
+
+@media (min-width: 640px) {
+  .animate-gradient {
+    animation: gradientMove 8s ease infinite;
+  }
 }

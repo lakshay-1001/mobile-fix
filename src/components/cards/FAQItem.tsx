@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
 interface Props {
@@ -15,8 +14,7 @@ export default function FAQItem({
   const answerId = `faq-answer-${question.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
   return (
-    <motion.div
-      layout
+    <div
       className="
         bg-white
 
@@ -97,25 +95,13 @@ export default function FAQItem({
         </div>
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{
-              opacity: 0,
-              height: 0,
-            }}
-            animate={{
-              opacity: 1,
-              height: "auto",
-            }}
-            exit={{
-              opacity: 0,
-              height: 0,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
-          >
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+        aria-hidden={!open}
+      >
+        <div className="min-h-0 overflow-hidden">
             <div
               id={answerId}
               role="region"
@@ -157,9 +143,8 @@ export default function FAQItem({
                 {answer}
               </p>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
 }
