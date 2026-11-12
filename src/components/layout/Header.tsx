@@ -12,7 +12,7 @@ import { trackEvent } from "../../config/analytics";
 
 const navItems = [
   { label: "Services", href: "/services" },
-  { label: "Shop", href: "/shop" },
+  // { label: "Shop", href: "/shop" },
   { label: "Our store", href: "/locations" },
   { label: "About", href: "/about" },
   { label: "Guides", href: "/blog" },
